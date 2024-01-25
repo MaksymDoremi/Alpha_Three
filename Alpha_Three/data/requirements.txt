@@ -1,0 +1,12 @@
+﻿Vložení, smazání a úpravu nějaké informace, záznamu, který se ukládá do více než jedné tabulky. 
+Například vložení objednávky, která má položky apod.
+
+Provést transakci nad více než jednou tabulkou. 
+Například převod kreditních bodů mezi dvěma účty apod.
+
+Vygenerovat souhrný report, který bude obsahovat smysluplná agregovaná data z alespoň tří tabulek 
+Vaší databáze, např. počet součty nákupů podle měst apod. Report musí mít hlavičku a patičku.
+
+Import dat do min. dvou tabulek z formátu CSV, XML nebo JSON.
+
+Nastavit celý program v konfiguračním souboru.
