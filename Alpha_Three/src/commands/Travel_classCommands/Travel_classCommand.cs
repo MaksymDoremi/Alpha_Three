@@ -5,26 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alpha_Three.src.commands
+namespace Alpha_Three.src.commands.Travel_classCommands
 {
-    public class HelpCommand : ICommand
+    internal class Travel_classCommand : ICommand
     {
-        private string helpCommand;
-        public HelpCommand(string helpCommand) 
-        {
-            this.helpCommand = helpCommand;
-        }
         public string Execute()
-        {
-            return this.helpCommand;
-        }
-
-        public void Run()
         {
             throw new NotImplementedException();
         }
 
-        public string View()
+        public void Run()
         {
             throw new NotImplementedException();
         }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Alpha_Three.src.DAO
 {
-    public class Travel_classDAO : IDAO<Travel_class>
+    public class DriveDAL : IFunctions<Drive>
     {
         public bool Delete(int id)
         {
@@ -21,7 +21,7 @@ namespace Alpha_Three.src.DAO
             throw new NotImplementedException();
         }
 
-        public string ExportToJSON(List<Travel_class> list)
+        public string ExportToJSON(List<Drive> list)
         {
             throw new NotImplementedException();
         }
@@ -31,7 +31,7 @@ namespace Alpha_Three.src.DAO
             throw new NotImplementedException();
         }
 
-        public string ExportToJSON(List<Travel_class> list, string path)
+        public string ExportToJSON(List<Drive> list, string path)
         {
             throw new NotImplementedException();
         }
@@ -41,12 +41,12 @@ namespace Alpha_Three.src.DAO
             throw new NotImplementedException();
         }
 
-        public List<Travel_class>? GetAllList()
+        public List<Drive>? GetAllList()
         {
             throw new NotImplementedException();
         }
 
-        public Travel_class? GetByID(int id)
+        public Drive? GetByID(int id)
         {
             throw new NotImplementedException();
         }
@@ -56,12 +56,12 @@ namespace Alpha_Three.src.DAO
             throw new NotImplementedException();
         }
 
-        public bool Insert(Travel_class element)
+        public bool Insert(Drive element)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Travel_class element)
+        public bool Update(Drive element)
         {
             throw new NotImplementedException();
         }

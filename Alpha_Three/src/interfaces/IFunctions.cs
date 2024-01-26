@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Alpha_Three.src.interfaces
 {
-    public interface IDAO<T> where T : IBaseClass
+    public interface IFunctions<T> where T : IBaseClass
     {
         #region CRUD
         /// <summary>

@@ -5,25 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alpha_Three.src.commands
+namespace Alpha_Three.src.commands.DriveCommands
 {
-    public class HelpCommand : ICommand
+    internal class UpdateDriveCommand : ICommand
     {
-        private string helpCommand;
-        public HelpCommand(string helpCommand) 
-        {
-            this.helpCommand = helpCommand;
-        }
         public string Execute()
         {
-            return this.helpCommand;
+            throw new NotImplementedException();
         }
-
         public void Run()
         {
             throw new NotImplementedException();
         }
-
         public string View()
         {
             throw new NotImplementedException();

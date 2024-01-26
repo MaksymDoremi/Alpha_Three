@@ -9,5 +9,9 @@ namespace Alpha_Three.src.interfaces
     public interface ICommand
     {
         string Execute();
+
+        void Run();
+
+     
     }
 }

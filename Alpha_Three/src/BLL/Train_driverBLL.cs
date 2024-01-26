@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alpha_Three.src.DAO
+namespace Alpha_Three.src.BLL
 {
-    public class TrainDAO : IDAO<Train>
+    public class Train_driverBLL : IFunctions<Train_driver>
     {
         public bool Delete(int id)
         {
@@ -21,7 +21,7 @@ namespace Alpha_Three.src.DAO
             throw new NotImplementedException();
         }
 
-        public string ExportToJSON(List<Train> list)
+        public string ExportToJSON(List<Train_driver> list)
         {
             throw new NotImplementedException();
         }
@@ -31,7 +31,7 @@ namespace Alpha_Three.src.DAO
             throw new NotImplementedException();
         }
 
-        public string ExportToJSON(List<Train> list, string path)
+        public string ExportToJSON(List<Train_driver> list, string path)
         {
             throw new NotImplementedException();
         }
@@ -41,12 +41,12 @@ namespace Alpha_Three.src.DAO
             throw new NotImplementedException();
         }
 
-        public List<Train>? GetAllList()
+        public List<Train_driver>? GetAllList()
         {
             throw new NotImplementedException();
         }
 
-        public Train? GetByID(int id)
+        public Train_driver? GetByID(int id)
         {
             throw new NotImplementedException();
         }
@@ -56,12 +56,12 @@ namespace Alpha_Three.src.DAO
             throw new NotImplementedException();
         }
 
-        public bool Insert(Train element)
+        public bool Insert(Train_driver element)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(Train element)
+        public bool Update(Train_driver element)
         {
             throw new NotImplementedException();
         }

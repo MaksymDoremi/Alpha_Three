@@ -14,8 +14,13 @@ namespace Alpha_Three.src.application
         {
             Dictionary<string, ICommand> myCommands = new Dictionary<string, ICommand>() 
             {
-                { "help", new HelpCommand() },
-                { "clear", new ClearCommand()}
+                { "help", new HelpCommand("- help - shows usable commands\n" +
+                "- exit - exit program\n" +
+                "- clear - clear console\n" +
+                "- tables - work with tables\n" +
+                "- report - generate report") },
+                { "clear", new ClearCommand()},
+                { "tables", new TablesCommand()}
             };
 
 

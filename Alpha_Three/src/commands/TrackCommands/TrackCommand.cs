@@ -1,26 +1,20 @@
-﻿using Alpha_Three.src.interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Alpha_Three.src.interfaces;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alpha_Three.src.commands
+namespace Alpha_Three.src.commands.TrackCommands
 {
-    public class ClearCommand : ICommand
+    internal class TrackCommand : ICommand
     {
         public string Execute()
-        {
-            Console.Clear();
-            return null;
-        }
-
-        public void Run()
         {
             throw new NotImplementedException();
         }
 
-        public string View()
+        public void Run()
         {
             throw new NotImplementedException();
         }
