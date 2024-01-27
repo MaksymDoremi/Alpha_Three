@@ -73,7 +73,7 @@ create table Track
 create table Drive
 (
 	ID int primary key identity(1,1),
-	Train_drive_ID int foreign key references Train_driver(ID) not null,
+	Train_driver_ID int foreign key references Train_driver(ID) not null,
 	Track_ID int foreign key references Track(ID) not null,
 	Train_ID int foreign key references Train(ID) not null,
 	Departure datetime not null,
@@ -105,3 +105,15 @@ create table Ticket
 
 commit;
 
+insert into Train_driver(Name, Surname, Email) 
+values('Karel','Cerny', 'karel@cerny.cz'),
+('Honza','Modry', 'honza@modry.cz');
+
+insert into Station(Name, Address)
+values('Branik','Praha-Branik'), ('Usti', 'Usti-centrum');
+
+insert into Track(Station_Origin_ID, Station_Destination_ID, Track_length_km)
+values(1,2,100);
+
+insert into Train(Brand, Model, Capacity)
+values('Skoda', 'T42', 100), ('Mercedes', 'Benz12', 300);

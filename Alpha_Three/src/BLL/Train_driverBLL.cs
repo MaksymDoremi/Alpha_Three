@@ -1,4 +1,5 @@
-﻿using Alpha_Three.src.interfaces;
+﻿using Alpha_Three.src.DAO;
+using Alpha_Three.src.interfaces;
 using Alpha_Three.src.Objects;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,17 @@ namespace Alpha_Three.src.BLL
 
         public List<Train_driver>? GetAllList()
         {
-            throw new NotImplementedException();
+            try
+            {
+                Train_driverDAL dal = new Train_driverDAL();
+                List<Train_driver> items = dal.GetAllList();
+                return items;
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+
         }
 
         public Train_driver? GetByID(int id)

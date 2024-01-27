@@ -10,8 +10,6 @@ namespace Alpha_Three.src.interfaces
     {
         string Execute();
 
-        void Run();
-
      
     }
 }

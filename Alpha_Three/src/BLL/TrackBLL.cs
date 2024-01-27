@@ -1,4 +1,5 @@
-﻿using Alpha_Three.src.interfaces;
+﻿using Alpha_Three.src.DAO;
+using Alpha_Three.src.interfaces;
 using Alpha_Three.src.Objects;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,15 @@ namespace Alpha_Three.src.BLL
 
         public List<Track>? GetAllList()
         {
-            throw new NotImplementedException();
+            try
+            {
+                TrackDAL dal = new TrackDAL();
+                List<Track> items = new List<Track>(dal.GetAllList());
+                return items;
+            }catch (Exception e)
+            {
+                return null;
+            }
         }
 
         public Track? GetByID(int id)

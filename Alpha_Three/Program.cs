@@ -6,6 +6,7 @@ namespace Alpha_Three
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine(DateTime.Now.ToString());
             Application app = new Application();
             int line = 30;
 

@@ -9,5 +9,6 @@ namespace Alpha_Three.src.interfaces
     public interface IBaseClass
     {
         int ID { get; set; }
+
     }
 }
