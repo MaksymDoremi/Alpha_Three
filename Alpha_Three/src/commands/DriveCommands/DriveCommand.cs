@@ -62,7 +62,6 @@ namespace Alpha_Three.src.commands.DriveCommands
                 {
                     Console.WriteLine("Unknown command");
                 }
-
             }
         }
 
