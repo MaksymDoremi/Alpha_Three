@@ -1,11 +1,13 @@
 ﻿using Alpha_Three.src.BLL;
 using Alpha_Three.src.interfaces;
 using Alpha_Three.src.Objects;
+using Alpha_Three.src.application;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Alpha_Three.src.logger;
 
 namespace Alpha_Three.src.commands.DriveCommands
 {
@@ -25,24 +27,23 @@ namespace Alpha_Three.src.commands.DriveCommands
                 List<Drive> drives = new List<Drive>(bll.GetAllList());
                 drives.ForEach(drive => stringBuilder.AppendLine(drive.ToString()));
 
-                Console.WriteLine("Drives: \n" + stringBuilder.ToString());
+                Application.Print_message_line("Drives: \n" + stringBuilder.ToString());
 
-                Console.Write("Drive_ID: ");
+                Application.Print_message("Drive_ID: ");
                 int id = int.Parse(Console.ReadLine());
 
                 if (bll.Delete(id))
                 {
                     return "Drive deleted successfully!";
                 }
-                else
-                {
-                    return "Error deleting drive. Please try again.";
-                }
             }
             catch (Exception ex)
             {
-                return "ERROR: " + ex.ToString();
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+                return "Invalid input. Please try again.\n" +
+                    $"Error: {ex.Message}";
             }
+            return "Error deleting drive. Please try again.";
         }
 
         public string View()

@@ -10,6 +10,16 @@ namespace Alpha_Three.src.application
 {
     public class Application
     {
+        
+        public static void Print_message_line(string message)
+        {
+            Console.WriteLine(message);
+        }
+
+        public static void Print_message(string message)
+        {
+            Console.Write(message);
+        }
         public void Run()
         {
             Dictionary<string, ICommand> myCommands = new Dictionary<string, ICommand>() 
@@ -25,10 +35,10 @@ namespace Alpha_Three.src.application
 
 
             string command = String.Empty;
-            Console.WriteLine("Type 'help'");
+            Print_message_line("Type 'help'");
             while (true)
             {Console.OutputEncoding = Encoding.UTF8;
-                Console.Write("alfa:$ ");
+                Application.Print_message("alfa:$ ");
                 command = Console.ReadLine();
 
                 if (command.ToLower() == "exit")
@@ -38,11 +48,11 @@ namespace Alpha_Three.src.application
 
                 if (myCommands.ContainsKey(command.ToLower()))
                 {
-                    Console.WriteLine(myCommands[command.ToLower()].Execute());
+                    Print_message_line(myCommands[command.ToLower()].Execute());
                 }
                 else
                 {
-                    Console.WriteLine("Unknown command");
+                    Print_message_line("Unknown command");
                 }
                 
             }

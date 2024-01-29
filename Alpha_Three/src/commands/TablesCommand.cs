@@ -6,6 +6,7 @@ using Alpha_Three.src.commands.TrackCommands;
 using Alpha_Three.src.commands.Train_driverCommands;
 using Alpha_Three.src.commands.TrainCommands;
 using Alpha_Three.src.commands.Travel_classCommands;
+using Alpha_Three.src.application;
 using Alpha_Three.src.interfaces;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace Alpha_Three.src.commands
         public string Execute()
         {
 
-            Console.WriteLine(View());
+            Application.Print_message_line(View());
             Run();
 
             return "";
@@ -51,7 +52,7 @@ namespace Alpha_Three.src.commands
             while (true)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                Console.Write("alfa/tables:$ ");
+                Application.Print_message("alfa/tables:$ ");
                 command = Console.ReadLine();
 
                 if (command.ToLower() == "exit")
@@ -61,11 +62,11 @@ namespace Alpha_Three.src.commands
 
                 if (myCommands.ContainsKey(command.ToLower()))
                 {
-                    Console.WriteLine(myCommands[command.ToLower()].Execute());
+                    Application.Print_message_line(myCommands[command.ToLower()].Execute());
                 }
                 else
                 {
-                    Console.WriteLine("Unknown command");
+                    Application.Print_message_line("Unknown command");
                 }
 
             }

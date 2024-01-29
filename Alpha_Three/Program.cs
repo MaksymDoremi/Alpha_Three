@@ -6,21 +6,21 @@ namespace Alpha_Three
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine(DateTime.Now.ToString());
+            Application.Print_message_line(DateTime.Now.ToString());
             Application app = new Application();
             int line = 30;
 
-            Console.WriteLine(String.Concat(Enumerable.Repeat("=", line)));
-            Console.WriteLine("Alpha_Three");
-            Console.WriteLine(String.Concat(Enumerable.Repeat("=", line)));
-            Console.WriteLine();
+            Application.Print_message_line(String.Concat(Enumerable.Repeat("=", line)));
+            Application.Print_message_line("Alpha_Three");
+            Application.Print_message_line(String.Concat(Enumerable.Repeat("=", line)));
+            Application.Print_message_line("");
 
             app.Run();
 
-            Console.WriteLine();
-            Console.WriteLine(String.Concat(Enumerable.Repeat("=", line)));
-            Console.WriteLine("Alpha_Three shutdown");
-            Console.WriteLine(String.Concat(Enumerable.Repeat("=", line)));
+            Application.Print_message_line("");
+            Application.Print_message_line(String.Concat(Enumerable.Repeat("=", line)));
+            Application.Print_message_line("Alpha_Three shutdown");
+            Application.Print_message_line(String.Concat(Enumerable.Repeat("=", line)));
         }
     }
 }

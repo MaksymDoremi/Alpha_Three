@@ -22,7 +22,7 @@ namespace Alpha_Three.src.BLL
             }
             catch (Exception e)
             {
-                return false;
+                throw;
             }
             return true;
         }
@@ -54,16 +54,9 @@ namespace Alpha_Three.src.BLL
 
         public List<Drive>? GetAllList()
         {
-            try
-            {
-                DriveDAL dal = new DriveDAL();
-                List<Drive> items = dal.GetAllList();
-                return items;
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
+            DriveDAL dal = new DriveDAL();
+            List<Drive> items = dal.GetAllList();
+            return items;
         }
 
         public Drive? GetByID(int id)
@@ -82,9 +75,10 @@ namespace Alpha_Three.src.BLL
             {
                 DriveDAL dal = new DriveDAL();
                 dal.Insert(element);
-            } catch (Exception e)
+            }
+            catch (Exception ex)
             {
-                return false;
+                throw;
             }
             return true;
         }
@@ -98,7 +92,7 @@ namespace Alpha_Three.src.BLL
             }
             catch (Exception e)
             {
-                return false;
+                throw;
             }
             return true;
         }

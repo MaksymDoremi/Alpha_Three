@@ -38,7 +38,7 @@ namespace Alpha_Three.src.DAO
             catch (Exception ex)
             {
                 DatabaseConnection.GetConnection().Close();
-                throw ex;
+                throw;
             }
         }
 
@@ -123,9 +123,9 @@ namespace Alpha_Three.src.DAO
                 using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@train_driver_ID", element.Train_driver_ID);
-                    cmd.Parameters.AddWithValue("@track_ID", element.Track_ID);
+                    cmd.Parameters.AddWithValue("@track_ID", element.Track_ID); 
                     cmd.Parameters.AddWithValue("@train_ID", element.Train_ID); 
-                    cmd.Parameters.AddWithValue("@departure", element.Departure);
+                    cmd.Parameters.AddWithValue("@departure", element.Departure); 
                     cmd.Parameters.AddWithValue("@arrival", element.Arrival);
 
                     cmd.ExecuteNonQuery();
@@ -137,7 +137,7 @@ namespace Alpha_Three.src.DAO
             catch (Exception ex)
             {
                 DatabaseConnection.GetConnection().Close();
-                throw ex;
+                throw;
             }
         }
 
@@ -169,7 +169,7 @@ namespace Alpha_Three.src.DAO
             catch (Exception ex)
             {
                 DatabaseConnection.GetConnection().Close();
-                throw ex;
+                throw;
             }
         }
     }

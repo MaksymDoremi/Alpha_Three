@@ -117,3 +117,5 @@ values(1,2,100);
 
 insert into Train(Brand, Model, Capacity)
 values('Skoda', 'T42', 100), ('Mercedes', 'Benz12', 300);
+
+select * from Drive;

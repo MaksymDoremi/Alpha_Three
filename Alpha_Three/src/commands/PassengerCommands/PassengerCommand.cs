@@ -1,5 +1,6 @@
 ﻿using System;
 using Alpha_Three.src.interfaces;
+using Alpha_Three.src.application;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace Alpha_Three.src.commands.PassengerCommands
     {
         public string Execute()
         {
-            Console.WriteLine(View());
+            Application.Print_message_line(View());
             Run();
             return "";
         }
@@ -41,7 +42,7 @@ namespace Alpha_Three.src.commands.PassengerCommands
             while (true)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                Console.Write("alfa/tables/passenger:$ ");
+                Application.Print_message("alfa/tables/passenger:$ ");
                 command = Console.ReadLine();
 
                 if (command.ToLower() == "exit")
@@ -51,11 +52,18 @@ namespace Alpha_Three.src.commands.PassengerCommands
 
                 if (myCommands.ContainsKey(command.ToLower()))
                 {
-                    Console.WriteLine(myCommands[command.ToLower()].Execute());
+                    try
+                    {
+                        Application.Print_message_line(myCommands[command.ToLower()].Execute());
+                    }catch (Exception ex)
+                    {
+                        Application.Print_message_line(ex.Message);
+                    }
+                    
                 }
                 else
                 {
-                    Console.WriteLine("Unknown command");
+                    Application.Print_message_line("Unknown command");
                 }
             }
         }

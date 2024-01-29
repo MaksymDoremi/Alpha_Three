@@ -1,4 +1,5 @@
-﻿using Alpha_Three.src.interfaces;
+﻿using Alpha_Three.src.DAO;
+using Alpha_Three.src.interfaces;
 using Alpha_Three.src.Objects;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,16 @@ namespace Alpha_Three.src.BLL
 
         public List<Passenger>? GetAllList()
         {
-            throw new NotImplementedException();
+            try
+            {
+                PassengerDAL dal = new PassengerDAL();
+                List<Passenger> items = dal.GetAllList();
+                return items;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public Passenger? GetByID(int id)
@@ -58,7 +68,15 @@ namespace Alpha_Three.src.BLL
 
         public bool Insert(Passenger element)
         {
-            throw new NotImplementedException();
+            try
+            {
+                PassengerDAL dal = new PassengerDAL();
+                dal.Insert(element);
+            }catch (Exception ex)
+            {
+                throw;
+            }
+            return true;
         }
 
         public bool Update(Passenger element)

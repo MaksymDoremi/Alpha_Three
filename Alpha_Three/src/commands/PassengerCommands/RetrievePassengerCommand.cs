@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Alpha_Three.src.BLL;
+using Alpha_Three.src.Objects;
 
 namespace Alpha_Three.src.commands.PassengerCommands
 {
@@ -11,7 +13,20 @@ namespace Alpha_Three.src.commands.PassengerCommands
     {
         public string Execute()
         {
-            throw new NotImplementedException();
+            PassengerBLL bll = new PassengerBLL();
+            StringBuilder stringBuilder = new StringBuilder();
+            List<Passenger> passengers = new List<Passenger>(bll.GetAllList());
+            if(passengers is not null)
+            {
+                passengers.ForEach(passenger => stringBuilder.AppendLine(passenger.ToString()));
+            }
+            else
+            {
+                stringBuilder.AppendLine("EMPTY");
+            }
+            
+
+            return "Passengers: \n" + stringBuilder.ToString();
         }
     }
 }

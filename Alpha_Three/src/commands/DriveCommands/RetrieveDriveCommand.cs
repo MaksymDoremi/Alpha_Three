@@ -16,7 +16,16 @@ namespace Alpha_Three.src.commands.DriveCommands
             DriveBLL bll = new DriveBLL();
             StringBuilder stringBuilder= new StringBuilder();
             List<Drive> drives = new List<Drive> (bll.GetAllList());
-            drives.ForEach(drive => stringBuilder.AppendLine(drive.ToString()));
+            if(drives is not null)
+            {
+                drives.ForEach(drive => stringBuilder.AppendLine(drive.ToString()));
+            }
+            else
+            {
+                stringBuilder.AppendLine("EMPTY");
+            }
+            
+            
 
             return "Drives: \n"+stringBuilder.ToString();
         }
