@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alpha_Three.src.DAO
+namespace Alpha_Three.src.DAL
 {
     public class StationDAL : IFunctions<Station>
     {

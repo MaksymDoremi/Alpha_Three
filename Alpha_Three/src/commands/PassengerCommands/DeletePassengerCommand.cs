@@ -1,4 +1,8 @@
-﻿using Alpha_Three.src.interfaces;
+﻿using Alpha_Three.src.BLL;
+using Alpha_Three.src.interfaces;
+using Alpha_Three.src.logger;
+using Alpha_Three.src.Objects;
+using Alpha_Three.src.application;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +15,35 @@ namespace Alpha_Three.src.commands.PassengerCommands
     {
         public string Execute()
         {
-            throw new NotImplementedException();
+            return Run();
+        }
+
+        public string Run()
+        {
+            PassengerBLL bll = new PassengerBLL();
+            StringBuilder stringBuilder = new StringBuilder();
+            try
+            {
+                List<Passenger> passengers = new List<Passenger>(bll.GetAllList());
+                passengers.ForEach(drive => stringBuilder.AppendLine(drive.ToString()));
+
+                Application.Print_message_line("Passengers: \n" + stringBuilder.ToString());
+
+                Application.Print_message("Passenger_ID: ");
+                int id = int.Parse(Console.ReadLine());
+
+                if (bll.Delete(id))
+                {
+                    return "Passenger deleted successfully!";
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
+                return "Invalid input. Please try again.\n" +
+                    $"Error: {ex.Message}";
+            }
+            return "Error deleting passenger. Please try again.";
         }
     }
 }

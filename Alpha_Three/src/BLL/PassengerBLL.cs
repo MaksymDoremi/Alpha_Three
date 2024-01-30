@@ -1,4 +1,4 @@
-﻿using Alpha_Three.src.DAO;
+﻿using Alpha_Three.src.DAL;
 using Alpha_Three.src.interfaces;
 using Alpha_Three.src.Objects;
 using System;
@@ -14,7 +14,16 @@ namespace Alpha_Three.src.BLL
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                PassengerDAL dal = new PassengerDAL();
+                dal.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return true;
         }
 
         public string ExportToJSON(DataTable dataTable)
@@ -72,7 +81,8 @@ namespace Alpha_Three.src.BLL
             {
                 PassengerDAL dal = new PassengerDAL();
                 dal.Insert(element);
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }
@@ -81,7 +91,16 @@ namespace Alpha_Three.src.BLL
 
         public bool Update(Passenger element)
         {
-            throw new NotImplementedException();
+            try
+            {
+                PassengerDAL dal = new PassengerDAL();
+                dal.Update(element);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return true;
         }
     }
 }

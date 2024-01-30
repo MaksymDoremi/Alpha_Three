@@ -55,11 +55,11 @@ namespace Alpha_Three.src.commands.PassengerCommands
                     try
                     {
                         Application.Print_message_line(myCommands[command.ToLower()].Execute());
-                    }catch (Exception ex)
+                    }
+                    catch (Exception ex)
                     {
                         Application.Print_message_line(ex.Message);
                     }
-                    
                 }
                 else
                 {

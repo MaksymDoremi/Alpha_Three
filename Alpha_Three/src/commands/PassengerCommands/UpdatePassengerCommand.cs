@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Alpha_Three.src.DAO;
+using Alpha_Three.src.DAL;
 
 namespace Alpha_Three.src.commands.PassengerCommands
 {

@@ -9,13 +9,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alpha_Three.src.DAO
+namespace Alpha_Three.src.DAL
 {
     public class PassengerDAL : IFunctions<Passenger>
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "delete from Passenger where ID = @id";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
 
         public string ExportToJSON(DataTable dataTable)
@@ -116,7 +138,32 @@ namespace Alpha_Three.src.DAO
 
         public bool Update(Passenger element)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "update Passenger set Name = @name, Surname = @surname, Email = @email where ID = @id";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", element.ID);
+                    cmd.Parameters.AddWithValue("@name", element.Name);
+                    cmd.Parameters.AddWithValue("@surname", element.Surname);
+                    cmd.Parameters.AddWithValue("@email", element.Email);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
     }
 }
