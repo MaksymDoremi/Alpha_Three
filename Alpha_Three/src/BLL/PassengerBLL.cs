@@ -72,7 +72,14 @@ namespace Alpha_Three.src.BLL
 
         public void ImportFromJSON(string path)
         {
-            throw new NotImplementedException();
+            try
+            {
+                PassengerDAL dal = new PassengerDAL();
+                dal.ImportFromJSON(path);
+            }catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public bool Insert(Passenger element)

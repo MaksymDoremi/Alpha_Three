@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Alpha_Three.src.DAL
@@ -104,7 +105,22 @@ namespace Alpha_Three.src.DAL
 
         public void ImportFromJSON(string path)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string jsonString = "";
+                jsonString = File.ReadAllText(path);
+                List<Passenger> passengers = JsonSerializer.Deserialize<List<Passenger>>(jsonString);
+
+                foreach (Passenger element in passengers)
+                {
+                    Insert(element);
+                }
+            }
+            catch
+            {
+                throw;
+            }
+            
         }
 
         public bool Insert(Passenger element)
