@@ -1,10 +1,13 @@
-﻿using Alpha_Three.src.interfaces;
+﻿using Alpha_Three.src.db;
+using Alpha_Three.src.interfaces;
 using Alpha_Three.src.Objects;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Alpha_Three.src.DAL
@@ -13,7 +16,29 @@ namespace Alpha_Three.src.DAL
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "delete from Station where ID = @id";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
 
         public string ExportToJSON(DataTable dataTable)
@@ -38,12 +63,46 @@ namespace Alpha_Three.src.DAL
 
         public DataTable? GetAllDatatable()
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "select * from Station";
+            try
+            {
+                using (SqlDataAdapter sda = new SqlDataAdapter(new SqlCommand(query, DatabaseConnection.GetConnection())))
+                {
+                    DataTable dt = new DataTable();
+
+                    sda.Fill(dt);
+                    DatabaseConnection.GetConnection().Close();
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
 
         public List<Station>? GetAllList()
         {
-            throw new NotImplementedException();
+            List<Station> items = new List<Station>();
+            try
+            {
+                DataTable dataTable = GetAllDatatable();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    items.Add(new Station((int)row["ID"], (string)row["Name"], (string)row["Address"]));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return items;
         }
 
         public Station? GetByID(int id)
@@ -53,17 +112,78 @@ namespace Alpha_Three.src.DAL
 
         public void ImportFromJSON(string path)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string jsonString = "";
+                jsonString = File.ReadAllText(path);
+                List<Station> stations = JsonSerializer.Deserialize<List<Station>>(jsonString);
+
+                foreach (Station element in stations)
+                {
+                    Insert(element);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public bool Insert(Station element)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "insert into Station(Name, Address) values(@name, @address)";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@name", element.Name);
+                    cmd.Parameters.AddWithValue("@address", element.Address);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
 
         public bool Update(Station element)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "update Station set Name=@name, Address=@address where ID = @id";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", element.ID);
+                    cmd.Parameters.AddWithValue("@name", element.Name);
+                    cmd.Parameters.AddWithValue("@address", element.Address);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
     }
 }

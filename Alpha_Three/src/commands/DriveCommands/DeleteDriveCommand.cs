@@ -32,10 +32,7 @@ namespace Alpha_Three.src.commands.DriveCommands
                 Application.Print_message("Drive_ID: ");
                 int id = int.Parse(Console.ReadLine());
 
-                if (bll.Delete(id))
-                {
-                    return "Drive deleted successfully!";
-                }
+                bll.Delete(id);
             }
             catch (Exception ex)
             {
@@ -43,7 +40,7 @@ namespace Alpha_Three.src.commands.DriveCommands
                 return "Invalid input. Please try again.\n" +
                     $"Error: {ex.Message}";
             }
-            return "Error deleting drive. Please try again.";
+            return "Drive deleted successfully!";
         }
 
         public string View()

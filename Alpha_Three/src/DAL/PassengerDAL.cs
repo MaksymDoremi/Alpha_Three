@@ -116,7 +116,7 @@ namespace Alpha_Three.src.DAL
                     Insert(element);
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 throw;
             }

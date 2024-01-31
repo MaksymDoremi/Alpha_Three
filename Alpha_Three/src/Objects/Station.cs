@@ -9,6 +9,40 @@ namespace Alpha_Three.src.Objects
 {
     public class Station : IBaseClass
     {
-        public int ID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private int _id;
+        private string _name;
+        private string _address;
+
+        // Constructor
+        public Station(int id, string name, string address)
+        {
+            ID = id;
+            Name = name;
+            Address = address;
+        }
+
+        // Properties
+        public int ID
+        {
+            get => _id;
+            set => _id = value;
+        }
+
+        public string Name
+        {
+            get => _name;
+            set => _name = value;
+        }
+
+        public string Address
+        {
+            get => _address;
+            set => _address = value;
+        }
+
+        public override string ToString()
+        {
+            return $"Station ID: {ID}, Name: {Name}, Address: {Address}";
+        }
     }
 }

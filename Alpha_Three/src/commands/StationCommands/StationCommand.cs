@@ -1,6 +1,7 @@
 ﻿using System;
 using Alpha_Three.src.interfaces;
 using System.Collections.Generic;
+using Alpha_Three.src.logger;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,7 @@ namespace Alpha_Three.src.commands.StationCommands
                     catch (Exception ex)
                     {
                         Application.Print_message_line(ex.Message);
+                        Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                     }
                 }
                 else

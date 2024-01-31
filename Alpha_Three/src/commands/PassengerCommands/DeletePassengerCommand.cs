@@ -32,10 +32,7 @@ namespace Alpha_Three.src.commands.PassengerCommands
                 Application.Print_message("Passenger_ID: ");
                 int id = int.Parse(Console.ReadLine());
 
-                if (bll.Delete(id))
-                {
-                    return "Passenger deleted successfully!";
-                }
+                bll.Delete(id);
             }
             catch (Exception ex)
             {
@@ -43,7 +40,8 @@ namespace Alpha_Three.src.commands.PassengerCommands
                 return "Invalid input. Please try again.\n" +
                     $"Error: {ex.Message}";
             }
-            return "Error deleting passenger. Please try again.";
+
+            return "Passenger deleted successfully!";
         }
     }
 }

@@ -84,17 +84,24 @@ namespace Alpha_Three.src.DAL
             catch (Exception ex)
             {
                 DatabaseConnection.GetConnection().Close();
-                return null;
+                throw;
             }
         }
 
         public List<Drive>? GetAllList()
         {
             List<Drive> items = new List<Drive>();
-            DataTable dataTable = GetAllDatatable();
-            foreach (DataRow row in dataTable.Rows)
+            try
             {
-                items.Add(new Drive((int)row["ID"], (int)row["Train_driver_ID"], (int)row["Track_ID"], (int)row["Train_ID"], (DateTime)row["Departure"], (DateTime)row["Arrival"]));
+                DataTable dataTable = GetAllDatatable();
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    items.Add(new Drive((int)row["ID"], (int)row["Train_driver_ID"], (int)row["Track_ID"], (int)row["Train_ID"], (DateTime)row["Departure"], (DateTime)row["Arrival"]));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
             }
 
             return items;
@@ -123,9 +130,9 @@ namespace Alpha_Three.src.DAL
                 using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
                 {
                     cmd.Parameters.AddWithValue("@train_driver_ID", element.Train_driver_ID);
-                    cmd.Parameters.AddWithValue("@track_ID", element.Track_ID); 
-                    cmd.Parameters.AddWithValue("@train_ID", element.Train_ID); 
-                    cmd.Parameters.AddWithValue("@departure", element.Departure); 
+                    cmd.Parameters.AddWithValue("@track_ID", element.Track_ID);
+                    cmd.Parameters.AddWithValue("@train_ID", element.Train_ID);
+                    cmd.Parameters.AddWithValue("@departure", element.Departure);
                     cmd.Parameters.AddWithValue("@arrival", element.Arrival);
 
                     cmd.ExecuteNonQuery();

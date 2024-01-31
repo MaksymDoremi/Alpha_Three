@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Alpha_Three.src.commands.DriveCommands;
+using Alpha_Three.src.logger;
 
 namespace Alpha_Three.src.commands.PassengerCommands
 {
@@ -59,6 +60,7 @@ namespace Alpha_Three.src.commands.PassengerCommands
                     catch (Exception ex)
                     {
                         Application.Print_message_line(ex.Message);
+                        Logger.WriteLog($"{ex.Message}\n{ex.StackTrace}", true);
                     }
                 }
                 else

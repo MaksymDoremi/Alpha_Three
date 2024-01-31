@@ -54,9 +54,16 @@ namespace Alpha_Three.src.BLL
 
         public List<Drive>? GetAllList()
         {
-            DriveDAL dal = new DriveDAL();
-            List<Drive> items = dal.GetAllList();
-            return items;
+            try
+            {
+                DriveDAL dal = new DriveDAL();
+                List<Drive> items = dal.GetAllList();
+                return items;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public Drive? GetByID(int id)
