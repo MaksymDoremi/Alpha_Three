@@ -15,7 +15,29 @@ namespace Alpha_Three.src.DAL
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "delete from Track where ID = @id";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
 
         public string ExportToJSON(DataTable dataTable)
@@ -88,12 +110,61 @@ namespace Alpha_Three.src.DAL
 
         public bool Insert(Track element)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "insert into Track(Station_Origin_ID, Station_Destination_ID, Track_length_km) values(@stationOriginID, @stationDestinationID, @trackLengthKm)";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@stationOriginID", element.StationOriginID);
+                    cmd.Parameters.AddWithValue("@stationDestinationID", element.StationDestinationID);
+                    cmd.Parameters.AddWithValue("@trackLengthKm", element.TrackLengthKm);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
 
         public bool Update(Track element)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "update Track set Station_Origin_ID = @stationOriginID, Station_Destination_ID = @stationDestinationID, Track_length_km = @trackLengthKm where ID = @id";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", element.ID);
+                    cmd.Parameters.AddWithValue("@stationOriginID", element.StationOriginID);
+                    cmd.Parameters.AddWithValue("@stationDestinationID", element.StationDestinationID);
+                    cmd.Parameters.AddWithValue("@trackLengthKm", element.TrackLengthKm);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
     }
 }

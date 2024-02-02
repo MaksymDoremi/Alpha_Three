@@ -17,20 +17,19 @@ namespace Alpha_Three.src.commands.TicketCommands
         {
             return Run();
         }
-
         public string Run()
         {
             PassengerBLL passengerBLL = new PassengerBLL();
             DriveBLL driveBLL = new DriveBLL();
             Travel_classBLL travel_ClassBLL = new Travel_classBLL();
             StringBuilder stringBuilder = new StringBuilder();
-            
+
             try
             {
                 List<Passenger> passengers = new List<Passenger>(passengerBLL.GetAllList());
                 List<Drive> drives = new List<Drive>(driveBLL.GetAllList());
                 List<Travel_class> travel_classes = new List<Travel_class>(travel_ClassBLL.GetAllList());
-                
+
                 if (passengers is not null)
                 {
                     passengers.ForEach(passenger => stringBuilder.AppendLine(passenger.ToString()));
@@ -92,5 +91,6 @@ namespace Alpha_Three.src.commands.TicketCommands
 
             return "Ticket inserted successfully!";
         }
+        
     }
 }
