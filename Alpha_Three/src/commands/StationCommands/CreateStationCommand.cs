@@ -24,18 +24,14 @@ namespace Alpha_Three.src.commands.StationCommands
             {
                 Application.Print_message("Name: ");
                 string name = Console.ReadLine();
-               
+
                 Application.Print_message("Address: ");
                 string address = Console.ReadLine();
 
                 Station element = new Station(0, name, address);
                 StationBLL bll = new StationBLL();
 
-                if (bll.Insert(element))
-                {
-                    return "Station inserted successfully!";
-
-                }
+                bll.Insert(element);
             }
             catch (Exception ex)
             {
@@ -44,7 +40,7 @@ namespace Alpha_Three.src.commands.StationCommands
                     $"Error: {ex.Message}";
             }
 
-            return "Couldn't insert station";
+            return "Station inserted successfully!";
         }
     }
 }

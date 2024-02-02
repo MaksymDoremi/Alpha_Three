@@ -65,10 +65,7 @@ namespace Alpha_Three.src.commands.DriveCommands
 
                 // Create a new Drive object with the input data
                 Drive drive = new Drive(id, train_driver_ID, track_ID, train_ID, departure, arrival);
-                if (bll.Update(drive))
-                {
-                    return "Drive updated successfully!";
-                }
+                bll.Update(drive);
             }
             catch (Exception ex)
             {
@@ -77,7 +74,7 @@ namespace Alpha_Three.src.commands.DriveCommands
                     $"Error: {ex.Message}";
             }
 
-            return "Error updating drive. Please try again.";
+            return "Drive updated successfully!";
         }
         public string View()
         {

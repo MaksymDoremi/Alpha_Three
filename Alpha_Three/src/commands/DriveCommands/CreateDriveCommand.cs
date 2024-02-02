@@ -24,25 +24,51 @@ namespace Alpha_Three.src.commands.DriveCommands
             TrackBLL trackBLL = new TrackBLL();
             TrainBLL trainBLL = new TrainBLL();
             StringBuilder stringBuilder = new StringBuilder();
-            List<Train_driver> train_drivers = new List<Train_driver>(train_driverBLL.GetAllList());
-            List<Track> tracks = new List<Track>(trackBLL.GetAllList());
-            List<Train> trains = new List<Train>(trainBLL.GetAllList());
+            
 
             try
             {
-                train_drivers.ForEach(train_driver => stringBuilder.AppendLine(train_driver.ToString()));
+                List<Train_driver> train_drivers = new List<Train_driver>(train_driverBLL.GetAllList());
+                List<Track> tracks = new List<Track>(trackBLL.GetAllList());
+                List<Train> trains = new List<Train>(trainBLL.GetAllList());
+
+                
+                if (train_drivers is not null)
+                {
+                    train_drivers.ForEach(train_driver => stringBuilder.AppendLine(train_driver.ToString()));
+                }
+                else
+                {
+                    stringBuilder.AppendLine("EMPTY");
+                }
+
                 Application.Print_message_line("Train drivers available: \n" + stringBuilder.ToString());
                 Application.Print_message("Train_driver_ID: ");
                 int train_driver_ID = Int32.Parse(Console.ReadLine());
 
                 stringBuilder.Clear();
-                tracks.ForEach(track => stringBuilder.AppendLine(track.ToString()));
+                if (tracks is not null)
+                {
+                    tracks.ForEach(track => stringBuilder.AppendLine(track.ToString()));
+                }
+                else
+                {
+                    stringBuilder.AppendLine("EMPTY");
+                }  
                 Application.Print_message_line("Tracks available: \n" + stringBuilder.ToString());
                 Application.Print_message("Track_ID: ");
                 int track_ID = Int32.Parse(Console.ReadLine());
 
                 stringBuilder.Clear();
-                trains.ForEach(train => stringBuilder.AppendLine(train.ToString()));
+                
+                if (trains is not null)
+                {
+                    trains.ForEach(train => stringBuilder.AppendLine(train.ToString()));
+                }
+                else
+                {
+                    stringBuilder.AppendLine("EMPTY");
+                }
                 Application.Print_message_line("Trains available: \n" + stringBuilder.ToString());
                 Application.Print_message("Train_ID: ");
                 int train_ID = Int32.Parse(Console.ReadLine());

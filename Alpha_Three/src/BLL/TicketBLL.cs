@@ -1,4 +1,5 @@
-﻿using Alpha_Three.src.interfaces;
+﻿using Alpha_Three.src.DAL;
+using Alpha_Three.src.interfaces;
 using Alpha_Three.src.Objects;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,16 @@ namespace Alpha_Three.src.BLL
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TicketDAL dal = new TicketDAL();
+                dal.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return true;
         }
 
         public string ExportToJSON(DataTable dataTable)
@@ -43,7 +53,16 @@ namespace Alpha_Three.src.BLL
 
         public List<Ticket>? GetAllList()
         {
-            throw new NotImplementedException();
+            try
+            {
+                TicketDAL dal = new TicketDAL();
+                List<Ticket> items = dal.GetAllList();
+                return items;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public Ticket? GetByID(int id)
@@ -58,12 +77,29 @@ namespace Alpha_Three.src.BLL
 
         public bool Insert(Ticket element)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TicketDAL dal = new TicketDAL();
+                dal.Insert(element);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return true;
         }
 
         public bool Update(Ticket element)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TicketDAL dal = new TicketDAL();
+                dal.Update(element);
+            } catch (Exception ex)
+            {
+                throw;
+            }
+            return true;
         }
     }
 }

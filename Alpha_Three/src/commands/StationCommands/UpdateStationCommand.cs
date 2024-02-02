@@ -50,7 +50,7 @@ namespace Alpha_Three.src.commands.StationCommands
                 return "Invalid input. Please try again.\n" +
                     $"Error: {ex.Message}";
             }
-            return "Passenger updated successfully!";
+            return "Station updated successfully!";
         }
     }
 }

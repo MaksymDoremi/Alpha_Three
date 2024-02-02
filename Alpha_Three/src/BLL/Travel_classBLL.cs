@@ -1,4 +1,5 @@
-﻿using Alpha_Three.src.interfaces;
+﻿using Alpha_Three.src.DAL;
+using Alpha_Three.src.interfaces;
 using Alpha_Three.src.Objects;
 using System;
 using System.Collections.Generic;
@@ -43,7 +44,16 @@ namespace Alpha_Three.src.BLL
 
         public List<Travel_class>? GetAllList()
         {
-            throw new NotImplementedException();
+            try
+            {
+                Travel_classDAL dal = new Travel_classDAL();
+                List<Travel_class> items = dal.GetAllList();
+                return items;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public Travel_class? GetByID(int id)

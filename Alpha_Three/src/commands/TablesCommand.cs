@@ -44,7 +44,14 @@ namespace Alpha_Three.src.commands
                 { "help", new HelpCommand("- help - shows usable commands\n" +
                 "- exit - exit \n" +
                 "- clear - clear console\n" +
-                "- 1-8 - choose table")}
+                "- 1 - Drive\n" +
+                "- 2 - Passenger\n" +
+                "- 3 - Station\n" +
+                "- 4 - Ticket\n" +
+                "- 5 - Track\n" +
+                "- 6 - Train_driver\n" +
+                "- 7 - Train\n" +
+                "- 8 - Travel_class\n")}
             };
 
 
@@ -81,7 +88,7 @@ namespace Alpha_Three.src.commands
            "5) Track\n" +
            "6) Train_driver\n" +
            "7) Train\n" +
-           "8) Travel_class (retrieve)";
+           "8) Travel_class\n";
         }
     }
 }

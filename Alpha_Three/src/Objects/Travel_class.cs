@@ -9,6 +9,30 @@ namespace Alpha_Three.src.Objects
 {
     public class Travel_class : IBaseClass
     {
-        public int ID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        private int _id;
+        private string _name;
+
+        public int ID
+        {
+            get => _id;
+            set => _id = value;
+        }
+
+        public string Name
+        {
+            get => _name;
+            set => _name = value;
+        }
+
+        public Travel_class(int id, string name)
+        {
+            ID = id;
+            Name = name;
+        }
+
+        public override string ToString()
+        {
+            return $"Travel_class ID: {ID}, Name: {Name}";
+        }
     }
 }
