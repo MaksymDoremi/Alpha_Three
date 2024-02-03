@@ -12,7 +12,7 @@ using Alpha_Three.src.logger;
 
 namespace Alpha_Three.src.commands.DriveCommands
 {
-    internal class UpdateDriveCommand : ICommand
+    public class UpdateDriveCommand : ICommand
     {
         public string Execute()
         {

@@ -10,7 +10,7 @@ using Alpha_Three.src.logger;
 
 namespace Alpha_Three.src.commands.PassengerCommands
 {
-    internal class RetrievePassengerCommand : ICommand
+    public class RetrievePassengerCommand : ICommand
     {
         public string Execute()
         {

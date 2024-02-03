@@ -9,7 +9,7 @@ using Alpha_Three.src.Objects;
 
 namespace Alpha_Three.src.commands.TrackCommands
 {
-    internal class RetrieveTrackCommand : ICommand
+    public class RetrieveTrackCommand : ICommand
     {
         public string Execute()
         {

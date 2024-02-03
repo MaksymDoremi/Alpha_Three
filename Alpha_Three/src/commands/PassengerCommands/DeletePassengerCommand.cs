@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Alpha_Three.src.commands.PassengerCommands
 {
-    internal class DeletePassengerCommand : ICommand
+    public class DeletePassengerCommand : ICommand
     {
         public string Execute()
         {

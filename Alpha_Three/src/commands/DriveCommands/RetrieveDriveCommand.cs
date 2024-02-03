@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Alpha_Three.src.commands.DriveCommands
 {
-    internal class RetrieveDriveCommand : ICommand
+    public class RetrieveDriveCommand : ICommand
     {
         public string Execute()
         {

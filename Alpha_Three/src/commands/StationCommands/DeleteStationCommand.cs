@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Alpha_Three.src.commands.StationCommands
 {
-    internal class DeleteStationCommand : ICommand
+    public class DeleteStationCommand : ICommand
     {
         public string Execute()
         {

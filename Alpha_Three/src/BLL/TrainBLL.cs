@@ -14,7 +14,16 @@ namespace Alpha_Three.src.BLL
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TrainDAL dal = new TrainDAL();
+                dal.Delete(id);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            return true;
         }
 
         public string ExportToJSON(DataTable dataTable)
@@ -63,17 +72,43 @@ namespace Alpha_Three.src.BLL
 
         public void ImportFromJSON(string path)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TrainDAL dal = new TrainDAL();
+                dal.ImportFromJSON(path);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public bool Insert(Train element)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TrainDAL dal = new TrainDAL();
+                dal.Insert(element);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            return true;
         }
 
         public bool Update(Train element)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TrainDAL dal = new TrainDAL();
+                dal.Update(element);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            return true;
         }
     }
 }

@@ -12,7 +12,7 @@ using Alpha_Three.src.DAL;
 
 namespace Alpha_Three.src.commands.PassengerCommands
 {
-    internal class UpdatePassengerCommand : ICommand
+    public class UpdatePassengerCommand : ICommand
     {
         public string Execute()
         {

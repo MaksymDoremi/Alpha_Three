@@ -11,7 +11,7 @@ using Alpha_Three.src.Objects;
 
 namespace Alpha_Three.src.commands.Train_driverCommands
 {
-    internal class UpdateTrain_driverCommand : ICommand
+    public class UpdateTrain_driverCommand : ICommand
     {
         public string Execute()
         {

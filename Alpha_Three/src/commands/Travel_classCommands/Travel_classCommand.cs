@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Alpha_Three.src.commands.Travel_classCommands
 {
-    internal class Travel_classCommand : ICommand
+    public class Travel_classCommand : ICommand
     {
         public string Execute()
         {

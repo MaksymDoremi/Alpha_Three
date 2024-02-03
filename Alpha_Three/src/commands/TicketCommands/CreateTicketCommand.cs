@@ -11,7 +11,7 @@ using Alpha_Three.src.interfaces;
 
 namespace Alpha_Three.src.commands.TicketCommands
 {
-    internal class CreateTicketCommand : ICommand
+    public class CreateTicketCommand : ICommand
     {
         public string Execute()
         {

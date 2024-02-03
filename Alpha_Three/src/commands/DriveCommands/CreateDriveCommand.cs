@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Alpha_Three.src.commands.DriveCommands
 {
-    internal class CreateDriveCommand : ICommand
+    public class CreateDriveCommand : ICommand
     {
         public string Execute()
         {

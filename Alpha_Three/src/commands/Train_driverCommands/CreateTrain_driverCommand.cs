@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Alpha_Three.src.commands.Train_driverCommands
 {
-    internal class CreateTrain_driverCommand : ICommand
+    public class CreateTrain_driverCommand : ICommand
     {
         public string Execute()
         {
@@ -49,7 +49,7 @@ namespace Alpha_Three.src.commands.Train_driverCommands
                     $"Error: {ex.Message}";
             }
 
-            return "Passenger inserted successfully!";
+            return "Train_driver inserted successfully!";
         }
 
         public string View()

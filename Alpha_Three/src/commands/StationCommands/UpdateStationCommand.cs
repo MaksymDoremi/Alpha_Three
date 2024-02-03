@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace Alpha_Three.src.commands.StationCommands
 {
-    internal class UpdateStationCommand : ICommand
+    public class UpdateStationCommand : ICommand
     {
         public string Execute()
         {

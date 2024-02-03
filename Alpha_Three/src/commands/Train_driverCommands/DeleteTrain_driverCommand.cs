@@ -11,7 +11,7 @@ using Alpha_Three.src.application;
 
 namespace Alpha_Three.src.commands.Train_driverCommands
 {
-    internal class DeleteTrain_driverCommand : ICommand
+    public class DeleteTrain_driverCommand : ICommand
     {
         public string Execute()
         {

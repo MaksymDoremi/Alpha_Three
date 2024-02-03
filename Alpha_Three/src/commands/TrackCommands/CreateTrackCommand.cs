@@ -11,7 +11,7 @@ using Alpha_Three.src.Objects;
 
 namespace Alpha_Three.src.commands.TrackCommands
 {
-    internal class CreateTrackCommand : ICommand
+    public class CreateTrackCommand : ICommand
     {
         public string Execute()
         {

@@ -10,7 +10,7 @@ using Alpha_Three.src.logger;
 
 namespace Alpha_Three.src.commands.TrackCommands
 {
-    internal class TrackCommand : ICommand
+    public class TrackCommand : ICommand
     {
         public string Execute()
         {

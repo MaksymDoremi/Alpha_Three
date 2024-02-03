@@ -11,7 +11,7 @@ using Alpha_Three.src.Objects;
 
 namespace Alpha_Three.src.commands.TicketCommands
 {
-    internal class DeleteTicketCommand : ICommand
+    public class DeleteTicketCommand : ICommand
     {
         public string Execute()
         {

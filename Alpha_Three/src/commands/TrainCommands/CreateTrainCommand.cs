@@ -2,16 +2,16 @@
 using Alpha_Three.src.interfaces;
 using Alpha_Three.src.logger;
 using Alpha_Three.src.Objects;
-using Alpha_Three.src.application;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Alpha_Three.src.application;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alpha_Three.src.commands.StationCommands
+namespace Alpha_Three.src.commands.TrainCommands
 {
-    public class CreateStationCommand : ICommand
+    public class CreateTrainCommand : ICommand
     {
         public string Execute()
         {
@@ -22,14 +22,17 @@ namespace Alpha_Three.src.commands.StationCommands
         {
             try
             {
-                Application.Print_message("Name: ");
-                string name = Console.ReadLine();
+                Application.Print_message("Brand: ");
+                string brand = Console.ReadLine();
 
-                Application.Print_message("Address: ");
-                string address = Console.ReadLine();
+                Application.Print_message("Model: ");
+                string model = Console.ReadLine();
+                ;
+                Application.Print_message("Capacity: ");
+                int capacity = Int32.Parse(Console.ReadLine());
 
-                Station element = new Station(0, name, address);
-                StationBLL bll = new StationBLL();
+                Train element = new Train(0, brand, model, capacity);
+                TrainBLL bll = new TrainBLL();
 
                 bll.Insert(element);
             }
@@ -40,7 +43,7 @@ namespace Alpha_Three.src.commands.StationCommands
                     $"Error: {ex.Message}";
             }
 
-            return "Station inserted successfully!";
+            return "Train inserted successfully!";
         }
     }
 }

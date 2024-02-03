@@ -10,7 +10,7 @@ using Alpha_Three.src.logger;
 
 namespace Alpha_Three.src.commands.Train_driverCommands
 {
-    internal class ImportJsonTrain_driverCommand : ICommand
+    public class ImportJsonTrain_driverCommand : ICommand
     {
         public string Execute()
         {

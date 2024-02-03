@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Alpha_Three.src.commands.TicketCommands
 {
-    internal class TicketCommand : ICommand
+    public class TicketCommand : ICommand
     {
         public string Execute()
         {

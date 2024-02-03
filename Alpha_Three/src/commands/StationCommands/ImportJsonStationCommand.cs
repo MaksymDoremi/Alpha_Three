@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Alpha_Three.src.commands.StationCommands
 {
-    internal class ImportJsonStationCommand : ICommand
+    public class ImportJsonStationCommand : ICommand
     {
         public string Execute()
         {

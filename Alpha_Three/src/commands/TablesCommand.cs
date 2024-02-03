@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Alpha_Three.src.commands
 {
-    internal class TablesCommand : ICommand
+    public class TablesCommand : ICommand
     {
         public string Execute()
         {

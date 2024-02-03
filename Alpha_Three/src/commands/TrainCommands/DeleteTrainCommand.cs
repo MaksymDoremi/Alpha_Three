@@ -1,17 +1,17 @@
 ﻿using Alpha_Three.src.BLL;
 using Alpha_Three.src.interfaces;
+using Alpha_Three.src.logger;
 using Alpha_Three.src.Objects;
-using Alpha_Three.src.application;
 using System;
 using System.Collections.Generic;
+using Alpha_Three.src.application;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Alpha_Three.src.logger;
 
-namespace Alpha_Three.src.commands.DriveCommands
+namespace Alpha_Three.src.commands.TrainCommands
 {
-    public class DeleteDriveCommand : ICommand
+    public class DeleteTrainCommand : ICommand
     {
         public string Execute()
         {
@@ -20,16 +20,16 @@ namespace Alpha_Three.src.commands.DriveCommands
 
         public string Run()
         {
-            DriveBLL bll = new DriveBLL();
+            TrainBLL bll = new TrainBLL();
             StringBuilder stringBuilder = new StringBuilder();
             try
             {
-                List<Drive> drives = new List<Drive>(bll.GetAllList());
-                drives.ForEach(drive => stringBuilder.AppendLine(drive.ToString()));
+                List<Train> trains = new List<Train>(bll.GetAllList());
+                trains.ForEach(train => stringBuilder.AppendLine(train.ToString()));
 
-                Application.Print_message_line("Drives: \n" + stringBuilder.ToString());
+                Application.Print_message_line("Trains: \n" + stringBuilder.ToString());
 
-                Application.Print_message("Drive_ID: ");
+                Application.Print_message("Train_ID: ");
                 int id = int.Parse(Console.ReadLine());
 
                 bll.Delete(id);
@@ -40,12 +40,8 @@ namespace Alpha_Three.src.commands.DriveCommands
                 return "Invalid input. Please try again.\n" +
                     $"Error: {ex.Message}";
             }
-            return "Drive deleted successfully!";
-        }
 
-        public string View()
-        {
-            throw new NotImplementedException();
+            return "Train deleted successfully!";
         }
     }
 }

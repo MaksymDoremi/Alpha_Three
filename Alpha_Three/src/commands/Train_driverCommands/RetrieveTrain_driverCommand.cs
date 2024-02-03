@@ -9,7 +9,7 @@ using Alpha_Three.src.Objects;
 
 namespace Alpha_Three.src.commands.Train_driverCommands
 {
-    internal class RetrieveTrain_driverCommand : ICommand
+    public class RetrieveTrain_driverCommand : ICommand
     {
         public string Execute()
         {

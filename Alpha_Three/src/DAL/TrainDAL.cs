@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Alpha_Three.src.DAL
@@ -15,7 +16,29 @@ namespace Alpha_Three.src.DAL
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "delete from Train where ID = @id";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
 
         public string ExportToJSON(DataTable dataTable)
@@ -83,17 +106,80 @@ namespace Alpha_Three.src.DAL
 
         public void ImportFromJSON(string path)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string jsonString = "";
+                jsonString = File.ReadAllText(path);
+                List<Train> trains = JsonSerializer.Deserialize<List<Train>>(jsonString);
+
+                foreach (Train element in trains)
+                {
+                    Insert(element);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public bool Insert(Train element)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "insert into Train(Brand, Model, Capacity) values(@brand, @model, @capacity)";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@brand", element.Brand);
+                    cmd.Parameters.AddWithValue("@model", element.Model);
+                    cmd.Parameters.AddWithValue("@capacity", element.Capacity);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
 
         public bool Update(Train element)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "update Train set Brand = @brand, Model = @model, Capacity = @capacity where ID = @id";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", element.ID);
+                    cmd.Parameters.AddWithValue("@brand", element.Brand);
+                    cmd.Parameters.AddWithValue("@model", element.Model);
+                    cmd.Parameters.AddWithValue("@capacity", element.Capacity);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
     }
 }

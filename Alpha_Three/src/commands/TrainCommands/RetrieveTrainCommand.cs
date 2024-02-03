@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alpha_Three.src.commands.TicketCommands
+namespace Alpha_Three.src.commands.TrainCommands
 {
-    public class RetrieveTicketCommand : ICommand
+    public class RetrieveTrainCommand : ICommand
     {
         public string Execute()
         {
-            TicketBLL bll = new TicketBLL();
+            TrainBLL bll = new TrainBLL();
             StringBuilder stringBuilder = new StringBuilder();
             try
             {
-                List<Ticket> tickets = new List<Ticket>(bll.GetAllList());
-                if (tickets is not null)
+                List<Train> trains = new List<Train>(bll.GetAllList());
+                if (trains is not null)
                 {
-                    tickets.ForEach(ticket => stringBuilder.AppendLine(ticket.ToString()));
+                    trains.ForEach(train => stringBuilder.AppendLine(train.ToString()));
                 }
                 else
                 {
@@ -32,7 +32,7 @@ namespace Alpha_Three.src.commands.TicketCommands
                 throw;
             }
 
-            return "Tickets: \n" + stringBuilder.ToString();
+            return "Trains: \n" + stringBuilder.ToString();
         }
     }
 }

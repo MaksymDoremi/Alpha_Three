@@ -12,7 +12,7 @@ using System.Xml.Linq;
 
 namespace Alpha_Three.src.commands.PassengerCommands
 {
-    internal class ImportJsonPassengerCommand : ICommand
+    public class ImportJsonPassengerCommand : ICommand
     {
         public string Execute()
         {

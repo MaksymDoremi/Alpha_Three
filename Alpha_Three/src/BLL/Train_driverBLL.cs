@@ -76,7 +76,7 @@ namespace Alpha_Three.src.BLL
         {
             try
             {
-                PassengerDAL dal = new PassengerDAL();
+                Train_driverDAL dal = new Train_driverDAL();
                 dal.ImportFromJSON(path);
             }
             catch (Exception ex)

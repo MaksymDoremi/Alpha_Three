@@ -10,7 +10,7 @@ using Alpha_Three.src.commands.PassengerCommands;
 
 namespace Alpha_Three.src.commands.StationCommands
 {
-    internal class StationCommand : ICommand
+    public class StationCommand : ICommand
     {
         public string Execute()
         {

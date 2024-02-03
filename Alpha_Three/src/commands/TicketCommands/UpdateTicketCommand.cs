@@ -12,7 +12,7 @@ using Alpha_Three.src.DAL;
 
 namespace Alpha_Three.src.commands.TicketCommands
 {
-    internal class UpdateTicketCommand : ICommand
+    public class UpdateTicketCommand : ICommand
     {
         public string Execute()
         {
