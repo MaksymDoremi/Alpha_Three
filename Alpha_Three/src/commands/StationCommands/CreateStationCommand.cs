@@ -18,6 +18,10 @@ namespace Alpha_Three.src.commands.StationCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs creation of the station
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             try

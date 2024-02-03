@@ -17,6 +17,10 @@ namespace Alpha_Three.src.commands.Train_driverCommands
             return Run();
         }
 
+        /// <summary>
+        /// Requires path to json and imports train drivers
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             try

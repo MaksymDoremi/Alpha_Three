@@ -19,6 +19,9 @@ namespace Alpha_Three.src.commands.StationCommands
             return "";
         }
 
+        /// <summary>
+        /// Main loop for the station commands
+        /// </summary>
         public void Run()
         {
             Dictionary<string, ICommand> myCommands = new Dictionary<string, ICommand>()
@@ -70,6 +73,10 @@ namespace Alpha_Three.src.commands.StationCommands
             }
         }
 
+        /// <summary>
+        /// Show all command for station
+        /// </summary>
+        /// <returns></returns>
         public string View()
         {
             return "1) create \n" +

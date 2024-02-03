@@ -17,6 +17,10 @@ namespace Alpha_Three.src.commands.StationCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs updation of the station
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             StringBuilder stringBuilder = new StringBuilder();

@@ -11,6 +11,10 @@ namespace Alpha_Three.src.commands.Train_driverCommands
 {
     public class RetrieveTrain_driverCommand : ICommand
     {
+        /// <summary>
+        /// Returns all train drivers
+        /// </summary>
+        /// <returns></returns>
         public string Execute()
         {
             Train_driverBLL bll = new Train_driverBLL();

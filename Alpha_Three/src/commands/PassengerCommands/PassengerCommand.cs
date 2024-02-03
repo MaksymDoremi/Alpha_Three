@@ -19,6 +19,9 @@ namespace Alpha_Three.src.commands.PassengerCommands
             return "";
         }
 
+        /// <summary>
+        /// Passenger commands loop
+        /// </summary>
         public void Run()
         {
             Dictionary<string, ICommand> myCommands = new Dictionary<string, ICommand>()
@@ -70,6 +73,10 @@ namespace Alpha_Three.src.commands.PassengerCommands
             }
         }
 
+        /// <summary>
+        /// View to show possible commands
+        /// </summary>
+        /// <returns></returns>
         public string View()
         {
             return "1) create \n" +

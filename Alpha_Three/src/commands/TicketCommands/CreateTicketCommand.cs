@@ -17,6 +17,11 @@ namespace Alpha_Three.src.commands.TicketCommands
         {
             return Run();
         }
+
+        /// <summary>
+        /// Runs creation of the ticket
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             PassengerBLL passengerBLL = new PassengerBLL();
@@ -88,9 +93,7 @@ namespace Alpha_Three.src.commands.TicketCommands
                 return "Invalid input. Please try again.\n" +
                     $"Error: {ex.Message}";
             }
-
             return "Ticket inserted successfully!";
         }
-        
     }
 }

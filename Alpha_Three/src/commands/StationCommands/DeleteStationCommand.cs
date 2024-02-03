@@ -18,6 +18,10 @@ namespace Alpha_Three.src.commands.StationCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs deletion of the station
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             StationBLL bll = new StationBLL();

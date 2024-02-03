@@ -14,19 +14,14 @@ namespace Alpha_Three.src.commands
         {
             this.helpCommand = helpCommand;
         }
+
+        /// <summary>
+        /// Returns string given from constructor
+        /// </summary>
+        /// <returns></returns>
         public string Execute()
         {
             return this.helpCommand;
-        }
-
-        public void Run()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string View()
-        {
-            throw new NotImplementedException();
         }
     }
 }

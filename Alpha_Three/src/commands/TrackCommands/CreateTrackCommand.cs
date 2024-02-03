@@ -18,6 +18,10 @@ namespace Alpha_Three.src.commands.TrackCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs creation of the track
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             StationBLL stationBLL = new StationBLL();

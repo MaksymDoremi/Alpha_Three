@@ -19,6 +19,9 @@ namespace Alpha_Three.src.commands.TrackCommands
             return "";
         }
 
+        /// <summary>
+        /// Main loop for track commands
+        /// </summary>
         public void Run()
         {
             Dictionary<string, ICommand> myCommands = new Dictionary<string, ICommand>()
@@ -69,6 +72,10 @@ namespace Alpha_Three.src.commands.TrackCommands
             }
         }
 
+        /// <summary>
+        /// Shows all track commands
+        /// </summary>
+        /// <returns></returns>
         public string View()
         {
             return "1) create \n" +

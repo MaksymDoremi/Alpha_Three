@@ -18,6 +18,11 @@ namespace Alpha_Three.src.commands.DriveCommands
         {
             return Run();
         }
+
+        /// <summary>
+        /// Runs update of the drive
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             DriveBLL bll = new DriveBLL();
@@ -75,10 +80,6 @@ namespace Alpha_Three.src.commands.DriveCommands
             }
 
             return "Drive updated successfully!";
-        }
-        public string View()
-        {
-            throw new NotImplementedException();
         }
     }
 }

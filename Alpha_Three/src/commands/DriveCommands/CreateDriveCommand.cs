@@ -18,13 +18,17 @@ namespace Alpha_Three.src.commands.DriveCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs creation of the drive
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             Train_driverBLL train_driverBLL = new Train_driverBLL();
             TrackBLL trackBLL = new TrackBLL();
             TrainBLL trainBLL = new TrainBLL();
             StringBuilder stringBuilder = new StringBuilder();
-            
+
 
             try
             {
@@ -32,7 +36,7 @@ namespace Alpha_Three.src.commands.DriveCommands
                 List<Track> tracks = new List<Track>(trackBLL.GetAllList());
                 List<Train> trains = new List<Train>(trainBLL.GetAllList());
 
-                
+
                 if (train_drivers is not null)
                 {
                     train_drivers.ForEach(train_driver => stringBuilder.AppendLine(train_driver.ToString()));
@@ -54,13 +58,13 @@ namespace Alpha_Three.src.commands.DriveCommands
                 else
                 {
                     stringBuilder.AppendLine("EMPTY");
-                }  
+                }
                 Application.Print_message_line("Tracks available: \n" + stringBuilder.ToString());
                 Application.Print_message("Track_ID: ");
                 int track_ID = Int32.Parse(Console.ReadLine());
 
                 stringBuilder.Clear();
-                
+
                 if (trains is not null)
                 {
                     trains.ForEach(train => stringBuilder.AppendLine(train.ToString()));
@@ -83,11 +87,7 @@ namespace Alpha_Three.src.commands.DriveCommands
                 Drive element = new Drive(0, train_driver_ID, track_ID, train_ID, departure, arrival);
                 DriveBLL bll = new DriveBLL();
 
-
-                if (bll.Insert(element))
-                {
-                    return "Drive inserted successfully!";
-                }
+                bll.Insert(element);
             }
             catch (Exception ex)
             {
@@ -96,12 +96,7 @@ namespace Alpha_Three.src.commands.DriveCommands
                     $"Error: {ex.Message}";
             }
 
-            return "Couldn't insert drive";
-        }
-
-        public string View()
-        {
-            throw new NotImplementedException();
+            return "Drive inserted successfully!";
         }
     }
 }

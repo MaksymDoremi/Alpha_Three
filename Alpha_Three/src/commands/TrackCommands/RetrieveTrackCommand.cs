@@ -11,6 +11,10 @@ namespace Alpha_Three.src.commands.TrackCommands
 {
     public class RetrieveTrackCommand : ICommand
     {
+        /// <summary>
+        /// Returns all tracks
+        /// </summary>
+        /// <returns></returns>
         public string Execute()
         {
             TrackBLL bll = new TrackBLL();

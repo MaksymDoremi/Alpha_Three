@@ -11,6 +11,10 @@ namespace Alpha_Three.src.commands.TicketCommands
 {
     public class RetrieveTicketCommand : ICommand
     {
+        /// <summary>
+        /// Returns all tickets
+        /// </summary>
+        /// <returns></returns>
         public string Execute()
         {
             TicketBLL bll = new TicketBLL();

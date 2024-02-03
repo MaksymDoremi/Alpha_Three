@@ -18,6 +18,10 @@ namespace Alpha_Three.src.commands.TrainCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs deletion of the train
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             TrainBLL bll = new TrainBLL();

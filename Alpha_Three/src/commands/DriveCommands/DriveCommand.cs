@@ -1,17 +1,6 @@
-﻿using Alpha_Three.src.commands.PassengerCommands;
-using Alpha_Three.src.commands.StationCommands;
-using Alpha_Three.src.commands.TicketCommands;
-using Alpha_Three.src.commands.TrackCommands;
-using Alpha_Three.src.commands.Train_driverCommands;
-using Alpha_Three.src.commands.TrainCommands;
-using Alpha_Three.src.commands.Travel_classCommands;
-using Alpha_Three.src.application;
+﻿using Alpha_Three.src.application;
 using Alpha_Three.src.interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Alpha_Three.src.logger;
 
 namespace Alpha_Three.src.commands.DriveCommands
@@ -25,6 +14,9 @@ namespace Alpha_Three.src.commands.DriveCommands
             return "";
         }
 
+        /// <summary>
+        /// Main loop for the drive commands
+        /// </summary>
         public void Run()
         {
             Dictionary<string, ICommand> myCommands = new Dictionary<string, ICommand>()
@@ -75,6 +67,10 @@ namespace Alpha_Three.src.commands.DriveCommands
             }
         }
 
+        /// <summary>
+        /// Show all possible command for the drive
+        /// </summary>
+        /// <returns></returns>
         public string View()
         {
             return "1) create \n" +

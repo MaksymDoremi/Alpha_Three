@@ -19,6 +19,10 @@ namespace Alpha_Three.src.commands.PassengerCommands
             return Run();
         }
 
+        /// <summary>
+        /// Run importing new passengers
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             try
@@ -26,12 +30,9 @@ namespace Alpha_Three.src.commands.PassengerCommands
                 Application.Print_message("Path to JSON file: ");
                 string path = Console.ReadLine();
 
-
                 PassengerBLL bll = new PassengerBLL();
 
-
                 bll.ImportFromJSON(path);
-
             }
             catch (Exception ex)
             {

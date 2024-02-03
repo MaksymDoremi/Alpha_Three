@@ -26,26 +26,6 @@ namespace Alpha_Three.src.BLL
             return true;
         }
 
-        public string ExportToJSON(DataTable dataTable)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(List<Train> list)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(DataTable dataTable, string path)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(List<Train> list, string path)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataTable? GetAllDatatable()
         {
             throw new NotImplementedException();
@@ -63,11 +43,6 @@ namespace Alpha_Three.src.BLL
             {
                 return null;
             }
-        }
-
-        public Train? GetByID(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public void ImportFromJSON(string path)

@@ -1,0 +1,8 @@
+Drive report
+Date: 03.02.2024 23:58:58
+Beggining
+====================================================================================
+Train Driver Name: newname, Train Driver Surname: aaaa, Train Driver Email: abc@gmail.com, From: Branik | Praha-Branik, To: newname | newaddress, Train Brand: Skoda, Train Model: T42, Departure: 12.12.2000 12:12:12, Arrival: 12.12.2001 12:12:12
+Train Driver Name: newname, Train Driver Surname: aaaa, Train Driver Email: abc@gmail.com, From: Branik | Praha-Branik, To: newname | newaddress, Train Brand: Skoda, Train Model: T42, Departure: 02.01.1900 0:00:00, Arrival: 12.12.2000 12:12:12
+====================================================================================
+End

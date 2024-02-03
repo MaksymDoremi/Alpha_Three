@@ -9,13 +9,7 @@ namespace Alpha_Three.src.logger
 {
     public static class Logger
     {
-        //private static readonly string? logPath = ConfigurationManager.AppSettings["logFilePath"];
-
         private static readonly object _lock = new();
-
-        public delegate void OnLogMessage(string message);
-
-        public static event OnLogMessage? OnLogEvent;
 
         /// <summary>
         /// Writes program logs to file specidied in App.config at "logFilePath"
@@ -37,10 +31,7 @@ namespace Alpha_Three.src.logger
                     logMessage = $"ERROR [{DateTime.Now}]: {message}\n";
                 }
 
-                OnLogEvent?.Invoke(logMessage);
-
                 File.AppendAllText(ConfigurationManager.AppSettings["logFilePath"], logMessage);
-
             }
         }
     }

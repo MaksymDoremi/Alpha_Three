@@ -18,6 +18,10 @@ namespace Alpha_Three.src.commands.PassengerCommands
             return Run();
         }
 
+        /// <summary>
+        /// Run deletion of the passenger
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             PassengerBLL bll = new PassengerBLL();

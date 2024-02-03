@@ -19,6 +19,10 @@ namespace Alpha_Three.src.commands.TicketCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs updation of the ticket
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             TicketBLL bll = new TicketBLL();
@@ -26,7 +30,7 @@ namespace Alpha_Three.src.commands.TicketCommands
             DriveBLL driveBLL = new DriveBLL();
             Travel_classBLL travel_ClassBLL = new Travel_classBLL();
             StringBuilder stringBuilder = new StringBuilder();
-            
+
             try
             {
                 List<Ticket> tickets = new List<Ticket>(bll.GetAllList());

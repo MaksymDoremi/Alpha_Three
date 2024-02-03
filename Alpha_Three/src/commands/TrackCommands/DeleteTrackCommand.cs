@@ -18,6 +18,10 @@ namespace Alpha_Three.src.commands.TrackCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs deletion of the track
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             TrackBLL bll = new TrackBLL();

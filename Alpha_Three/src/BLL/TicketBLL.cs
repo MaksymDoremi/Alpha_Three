@@ -26,26 +26,6 @@ namespace Alpha_Three.src.BLL
             return true;
         }
 
-        public string ExportToJSON(DataTable dataTable)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(List<Ticket> list)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(DataTable dataTable, string path)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(List<Ticket> list, string path)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataTable? GetAllDatatable()
         {
             throw new NotImplementedException();
@@ -63,11 +43,6 @@ namespace Alpha_Three.src.BLL
             {
                 throw;
             }
-        }
-
-        public Ticket? GetByID(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public void ImportFromJSON(string path)
@@ -95,7 +70,8 @@ namespace Alpha_Three.src.BLL
             {
                 TicketDAL dal = new TicketDAL();
                 dal.Update(element);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }

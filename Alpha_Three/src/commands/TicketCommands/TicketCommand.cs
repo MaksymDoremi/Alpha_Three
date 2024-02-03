@@ -19,6 +19,9 @@ namespace Alpha_Three.src.commands.TicketCommands
             return "";
         }
 
+        /// <summary>
+        /// Main loop for the ticket commands
+        /// </summary>
         public void Run()
         {
             Dictionary<string, ICommand> myCommands = new Dictionary<string, ICommand>()
@@ -69,6 +72,10 @@ namespace Alpha_Three.src.commands.TicketCommands
             }
         }
 
+        /// <summary>
+        /// Show all command for the ticket
+        /// </summary>
+        /// <returns></returns>
         public string View()
         {
             return "1) create \n" +

@@ -19,6 +19,10 @@ namespace Alpha_Three.src.commands.PassengerCommands
             return Run();
         }
 
+        /// <summary>
+        /// Run creation of the passenger
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -33,19 +37,14 @@ namespace Alpha_Three.src.commands.PassengerCommands
                 Application.Print_message("Surname: ");
                 string surname = Console.ReadLine();
 
-                stringBuilder.Clear();;
+                stringBuilder.Clear(); ;
                 Application.Print_message("Email: ");
                 string email = Console.ReadLine();
 
                 Passenger element = new Passenger(0, name, surname, email);
                 PassengerBLL bll = new PassengerBLL();
 
-
-                if (bll.Insert(element))
-                {
-                    return "Passenger inserted successfully!";
-
-                }           
+                bll.Insert(element);
             }
             catch (Exception ex)
             {
@@ -54,12 +53,7 @@ namespace Alpha_Three.src.commands.PassengerCommands
                     $"Error: {ex.Message}";
             }
 
-            return "Couldn't insert passenger";
-        }
-
-        public string View()
-        {
-            throw new NotImplementedException();
+            return "Passenger inserted successfully!";
         }
     }
 }

@@ -17,6 +17,10 @@ namespace Alpha_Three.src.commands.StationCommands
             return Run();
         }
 
+        /// <summary>
+        /// Requires path to json and imports stations
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             try
@@ -24,7 +28,7 @@ namespace Alpha_Three.src.commands.StationCommands
                 Application.Print_message("Path to JSON file: ");
                 string path = Console.ReadLine();
 
-                StationBLL bll = new StationBLL(); 
+                StationBLL bll = new StationBLL();
 
                 bll.ImportFromJSON(path);
 

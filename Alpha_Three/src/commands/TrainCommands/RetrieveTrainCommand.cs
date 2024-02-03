@@ -11,6 +11,10 @@ namespace Alpha_Three.src.commands.TrainCommands
 {
     public class RetrieveTrainCommand : ICommand
     {
+        /// <summary>
+        /// Return all trains
+        /// </summary>
+        /// <returns></returns>
         public string Execute()
         {
             TrainBLL bll = new TrainBLL();

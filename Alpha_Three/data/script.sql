@@ -100,8 +100,35 @@ create table Ticket
 	Price int not null check(Price > 0),
 );
 
+go
+create view Drive_information
+as
+select train_driver.Name as 'Train driver name', train_driver.Surname as 'Train driver surname', 
+train_driver.Email as 'Train driver email', 
+concat(origin.Name,' | ', origin.Address) as 'From', concat(destination.Name,' | ', destination.Address) as 'To', 
+train.Brand as 'Train brand', train.Model as 'Train model', 
+drive.Departure, drive.Arrival
+from Train_driver train_driver join Drive drive on train_driver.ID = drive.Train_driver_ID
+join Train train on train.ID = drive.Train_ID
+join Track track on track.ID = drive.Track_ID
+join Station origin on origin.ID = track.Station_Origin_ID
+join Station destination on destination.ID = track.Station_Destination_ID;
+go
 
-
+create view Ticket_information
+as
+select passenger.Name as 'Passenger name', passenger.Surname as 'Passenger surname', passenger.Email as 'Passenger email', 
+travel_class.Name as 'Travel class', ticket.ID as 'Ticket ID', 
+concat(origin.Name,' | ', origin.Address) as 'From', concat(destination.Name,' | ', destination.Address) as 'To', 
+drive.Departure, drive.Arrival, ticket.Seat_number as 'Seat number', 
+ticket.Date_of_purchase as 'Date of purchase', ticket.Price
+from Passenger passenger join Ticket ticket on passenger.ID = ticket.Passenger_ID
+join Travel_class travel_class on travel_class.ID = ticket.Travel_class_ID
+join Drive drive on drive.ID = ticket.Drive_ID
+join Track track on track.ID = drive.Track_ID
+join Station origin on origin.ID = track.Station_Origin_ID
+join Station destination on destination.ID = track.Station_Destination_ID;
+go
 
 commit;
 

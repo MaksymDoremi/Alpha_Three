@@ -6,17 +6,17 @@ using Alpha_Three.src.commands.TrackCommands;
 using Alpha_Three.src.commands.Train_driverCommands;
 using Alpha_Three.src.commands.TrainCommands;
 using Alpha_Three.src.commands.Travel_classCommands;
-using Alpha_Three.src.application;
 using Alpha_Three.src.interfaces;
 using System;
 using System.Collections.Generic;
+using Alpha_Three.src.application;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Alpha_Three.src.commands
+namespace Alpha_Three.src.commands.ReportCommands
 {
-    public class TablesCommand : ICommand
+    internal class ReportCommand : ICommand
     {
         public string Execute()
         {
@@ -29,32 +29,19 @@ namespace Alpha_Three.src.commands
         }
 
         /// <summary>
-        /// Main loop for the tables commands, give access to all tables
+        /// Run report commands
         /// </summary>
         public void Run()
         {
             Dictionary<string, ICommand> myCommands = new Dictionary<string, ICommand>()
             {
-                { "1", new DriveCommand() },
-                { "2", new PassengerCommand() },
-                { "3", new StationCommand() },
-                { "4", new TicketCommand() },
-                { "5", new TrackCommand() },
-                { "6", new Train_driverCommand() },
-                { "7", new TrainCommand() },
-                { "8", new Travel_classCommand() },
-                { "clear", new ClearCommand() },
+                { "1", new DriveReportCommand() },
+                { "2", new TicketReportCommand() },              
                 { "help", new HelpCommand("- help - shows usable commands\n" +
                 "- exit - exit \n" +
                 "- clear - clear console\n" +
-                "- 1 - Drive\n" +
-                "- 2 - Passenger\n" +
-                "- 3 - Station\n" +
-                "- 4 - Ticket\n" +
-                "- 5 - Track\n" +
-                "- 6 - Train_driver\n" +
-                "- 7 - Train\n" +
-                "- 8 - Travel_class\n")}
+                "- 1 - Drive information\n" +
+                "- 2 - Ticket information\n")}
             };
 
 
@@ -62,7 +49,7 @@ namespace Alpha_Three.src.commands
             while (true)
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                Application.Print_message("alfa/tables:$ ");
+                Application.Print_message("alfa/report:$ ");
                 command = Console.ReadLine();
 
                 if (command.ToLower() == "exit")
@@ -81,21 +68,14 @@ namespace Alpha_Three.src.commands
 
             }
         }
-
         /// <summary>
-        /// Show all possible tables
+        /// Show possible command of the report
         /// </summary>
         /// <returns></returns>
         public string View()
         {
-            return "1) Drive\n" +
-           "2) Passenger\n" +
-           "3) Station\n" +
-           "4) Ticket\n" +
-           "5) Track\n" +
-           "6) Train_driver\n" +
-           "7) Train\n" +
-           "8) Travel_class\n";
+            return "1) Drive information\n" +
+           "2) Ticket information\n"; ;
         }
     }
 }

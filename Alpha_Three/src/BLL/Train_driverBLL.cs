@@ -27,26 +27,6 @@ namespace Alpha_Three.src.BLL
             return true;
         }
 
-        public string ExportToJSON(DataTable dataTable)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(List<Train_driver> list)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(DataTable dataTable, string path)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(List<Train_driver> list, string path)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataTable? GetAllDatatable()
         {
             throw new NotImplementedException();
@@ -65,11 +45,6 @@ namespace Alpha_Three.src.BLL
                 return null;
             }
 
-        }
-
-        public Train_driver? GetByID(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public void ImportFromJSON(string path)
@@ -91,7 +66,8 @@ namespace Alpha_Three.src.BLL
             {
                 Train_driverDAL dal = new Train_driverDAL();
                 dal.Insert(element);
-            }catch (Exception e)
+            }
+            catch (Exception e)
             {
                 throw;
             }

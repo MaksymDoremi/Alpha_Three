@@ -6,7 +6,6 @@ namespace Alpha_Three
     {
         public static void Main(string[] args)
         {
-            Application.Print_message_line(DateTime.Now.ToString());
             Application app = new Application();
             int line = 30;
 
@@ -15,6 +14,7 @@ namespace Alpha_Three
             Application.Print_message_line(String.Concat(Enumerable.Repeat("=", line)));
             Application.Print_message_line("");
 
+            //Run application
             app.Run();
 
             Application.Print_message_line("");

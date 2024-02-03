@@ -18,6 +18,10 @@ namespace Alpha_Three.src.commands.TrainCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs creation of the train
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             try

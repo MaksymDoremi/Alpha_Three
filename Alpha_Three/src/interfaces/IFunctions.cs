@@ -17,12 +17,6 @@ namespace Alpha_Three.src.interfaces
         /// <returns>True if succeeded</returns>
         bool Insert(T element);
         /// <summary>
-        /// Gets element by ID
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns>T element</returns>
-        T? GetByID(int id);
-        /// <summary>
         /// Gets all elements from database
         /// </summary>
         /// <returns>Datatable filled with elements</returns>
@@ -44,34 +38,6 @@ namespace Alpha_Three.src.interfaces
         /// <param name="id"></param>
         /// <returns>True if succeeded</returns>
         bool Delete(int id);
-        #endregion
-        #region Exports to JSON
-        /// <summary>
-        /// Exports datatable to JSON, default path is "entity.json"
-        /// </summary>
-        /// <param name="dataTable"></param>
-        /// <returns>JSON string</returns>
-        string ExportToJSON(DataTable dataTable);
-        /// <summary>
-        /// Exports list to JSON, default path is "entity.json"
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns>JSON string</returns>
-        string ExportToJSON(List<T> list);
-        /// <summary>
-        /// Exports list to JSON by your path
-        /// </summary>
-        /// <param name="dataTable"></param>
-        /// <param name="path"></param>
-        /// <returns>JSON string</returns>
-        string ExportToJSON(DataTable dataTable, string path);
-        /// <summary>
-        /// Exports list to JSON by your path
-        /// </summary>
-        /// <param name="list"></param>
-        /// <param name="path"></param>
-        /// <returns>JSON string</returns>
-        string ExportToJSON(List<T> list, string path);
         #endregion
         #region Imports from JSON
         /// <summary>

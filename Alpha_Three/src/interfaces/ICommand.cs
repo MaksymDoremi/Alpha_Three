@@ -8,8 +8,11 @@ namespace Alpha_Three.src.interfaces
 {
     public interface ICommand
     {
+        /// <summary>
+        /// Executes functionality for the each command
+        /// </summary>
+        /// <returns></returns>
         string Execute();
-
      
     }
 }

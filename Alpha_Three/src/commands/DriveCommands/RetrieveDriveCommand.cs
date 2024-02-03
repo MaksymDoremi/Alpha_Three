@@ -14,9 +14,10 @@ namespace Alpha_Three.src.commands.DriveCommands
         public string Execute()
         {
             DriveBLL bll = new DriveBLL();
-            StringBuilder stringBuilder= new StringBuilder();
-            List<Drive> drives = new List<Drive> (bll.GetAllList());
-            if(drives is not null)
+            StringBuilder stringBuilder = new StringBuilder();
+            List<Drive> drives = new List<Drive>(bll.GetAllList());
+
+            if (drives is not null)
             {
                 drives.ForEach(drive => stringBuilder.AppendLine(drive.ToString()));
             }
@@ -24,20 +25,8 @@ namespace Alpha_Three.src.commands.DriveCommands
             {
                 stringBuilder.AppendLine("EMPTY");
             }
-            
-            
 
-            return "Drives: \n"+stringBuilder.ToString();
-        }
-
-        public void Run()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string View()
-        {
-            throw new NotImplementedException();
+            return "Drives: \n" + stringBuilder.ToString();
         }
     }
 }

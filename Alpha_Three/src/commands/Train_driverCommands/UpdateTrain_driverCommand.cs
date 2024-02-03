@@ -18,6 +18,10 @@ namespace Alpha_Three.src.commands.Train_driverCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs update of the train driver
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             StringBuilder stringBuilder = new StringBuilder();

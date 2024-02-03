@@ -27,26 +27,6 @@ namespace Alpha_Three.src.BLL
             return true;
         }
 
-        public string ExportToJSON(DataTable dataTable)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(List<Drive> list)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(DataTable dataTable, string path)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(List<Drive> list, string path)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataTable? GetAllDatatable()
         {
             throw new NotImplementedException();
@@ -64,11 +44,6 @@ namespace Alpha_Three.src.BLL
             {
                 throw;
             }
-        }
-
-        public Drive? GetByID(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public void ImportFromJSON(string path)

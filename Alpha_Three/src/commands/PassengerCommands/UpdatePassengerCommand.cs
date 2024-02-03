@@ -19,11 +19,15 @@ namespace Alpha_Three.src.commands.PassengerCommands
             return Run();
         }
 
+        /// <summary>
+        /// Run update of the passenger
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             StringBuilder stringBuilder = new StringBuilder();
             PassengerBLL bll = new PassengerBLL();
-           
+
             try
             {
                 List<Passenger> passengers = new List<Passenger>(bll.GetAllList());
@@ -49,11 +53,7 @@ namespace Alpha_Three.src.commands.PassengerCommands
 
                 Passenger element = new Passenger(id, name, surname, email);
 
-
-                if (bll.Update(element))
-                {
-                    return "Passenger updated successfully!";
-                }
+                bll.Update(element);
             }
             catch (Exception ex)
             {
@@ -62,7 +62,7 @@ namespace Alpha_Three.src.commands.PassengerCommands
                     $"Error: {ex.Message}";
             }
 
-            return "Couldn't update passenger";
+            return "Passenger updated successfully!";
         }
     }
 }

@@ -14,6 +14,10 @@ namespace Alpha_Three.src.db
 
         private static SqlConnection _connection = null;
         private static readonly object _lock = new object();
+        /// <summary>
+        /// Database singleton, returns current connection
+        /// </summary>
+        /// <returns></returns>
         public static SqlConnection GetConnection()
         {
             if (_connection == null)

@@ -18,6 +18,10 @@ namespace Alpha_Three.src.commands.Train_driverCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs creation of the train driver
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -50,11 +54,6 @@ namespace Alpha_Three.src.commands.Train_driverCommands
             }
 
             return "Train_driver inserted successfully!";
-        }
-
-        public string View()
-        {
-            throw new NotImplementedException();
         }
     }
 }

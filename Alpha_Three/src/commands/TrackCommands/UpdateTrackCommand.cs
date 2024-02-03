@@ -18,7 +18,10 @@ namespace Alpha_Three.src.commands.TrackCommands
             return Run();
         }
 
-
+        /// <summary>
+        /// Runs update of the track
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             StationBLL stationBLL = new StationBLL();
@@ -29,7 +32,7 @@ namespace Alpha_Three.src.commands.TrackCommands
             {
                 List<Track> tracks = new List<Track>(bll.GetAllList());
                 List<Station> stations = new List<Station>(stationBLL.GetAllList());
-                
+
                 if (tracks is not null)
                 {
                     tracks.ForEach(track => stringBuilder.AppendLine(track.ToString()));
@@ -62,7 +65,7 @@ namespace Alpha_Three.src.commands.TrackCommands
                 Application.Print_message("Length in km: ");
                 int length = int.Parse(Console.ReadLine());
 
-                
+
                 Track element = new Track(track_ID, origin_station_ID, destination_station_ID, length);
 
                 bll.Update(element);
@@ -74,7 +77,7 @@ namespace Alpha_Three.src.commands.TrackCommands
                     $"Error: {ex.Message}";
             }
 
-            return "Track inserted successfully!";
+            return "Track updated successfully!";
         }
     }
 }

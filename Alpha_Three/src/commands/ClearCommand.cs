@@ -9,20 +9,14 @@ namespace Alpha_Three.src.commands
 {
     public class ClearCommand : ICommand
     {
+        /// <summary>
+        /// Clears console
+        /// </summary>
+        /// <returns></returns>
         public string Execute()
         {
             Console.Clear();
             return null;
-        }
-
-        public void Run()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string View()
-        {
-            throw new NotImplementedException();
         }
     }
 }

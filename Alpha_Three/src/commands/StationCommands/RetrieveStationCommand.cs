@@ -12,6 +12,10 @@ namespace Alpha_Three.src.commands.StationCommands
 {
     public class RetrieveStationCommand : ICommand
     {
+        /// <summary>
+        /// Returns all stations
+        /// </summary>
+        /// <returns></returns>
         public string Execute()
         {
             StationBLL bll = new StationBLL();

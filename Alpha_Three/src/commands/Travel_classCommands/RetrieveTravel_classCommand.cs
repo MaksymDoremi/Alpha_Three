@@ -11,6 +11,10 @@ namespace Alpha_Three.src.commands.Travel_classCommands
 {
     public class RetrieveTravel_classCommand : ICommand
     {
+        /// <summary>
+        /// Returns all travel classes
+        /// </summary>
+        /// <returns></returns>
         public string Execute()
         {
             Travel_classBLL bll = new Travel_classBLL();

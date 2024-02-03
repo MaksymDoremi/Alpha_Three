@@ -18,33 +18,13 @@ namespace Alpha_Three.src.BLL
             {
                 TrackDAL dal = new TrackDAL();
                 dal.Delete(id);
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw;
             }
             return true;
         }
-
-        public string ExportToJSON(DataTable dataTable)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(List<Track> list)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(DataTable dataTable, string path)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string ExportToJSON(List<Track> list, string path)
-        {
-            throw new NotImplementedException();
-        }
-
         public DataTable? GetAllDatatable()
         {
             throw new NotImplementedException();
@@ -57,15 +37,11 @@ namespace Alpha_Three.src.BLL
                 TrackDAL dal = new TrackDAL();
                 List<Track> items = new List<Track>(dal.GetAllList());
                 return items;
-            }catch (Exception e)
+            }
+            catch (Exception e)
             {
                 return null;
             }
-        }
-
-        public Track? GetByID(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public void ImportFromJSON(string path)
@@ -79,7 +55,8 @@ namespace Alpha_Three.src.BLL
             {
                 TrackDAL dal = new TrackDAL();
                 dal.Insert(element);
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 throw;
             }

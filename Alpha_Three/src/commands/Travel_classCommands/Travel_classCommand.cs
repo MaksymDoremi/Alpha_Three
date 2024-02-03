@@ -19,6 +19,9 @@ namespace Alpha_Three.src.commands.Travel_classCommands
             return "";
         }
 
+        /// <summary>
+        /// Loop for the travel class commands
+        /// </summary>
         public void Run()
         {
             Dictionary<string, ICommand> myCommands = new Dictionary<string, ICommand>()
@@ -63,10 +66,14 @@ namespace Alpha_Three.src.commands.Travel_classCommands
             }
         }
 
+        /// <summary>
+        /// Show all command possible 
+        /// </summary>
+        /// <returns></returns>
         public string View()
         {
             return "1) retrieve \n";
-                
+
         }
     }
 }

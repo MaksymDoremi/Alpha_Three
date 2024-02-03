@@ -18,6 +18,10 @@ namespace Alpha_Three.src.commands.TicketCommands
             return Run();
         }
 
+        /// <summary>
+        /// Runs deletion of the ticket
+        /// </summary>
+        /// <returns></returns>
         public string Run()
         {
             TicketBLL bll = new TicketBLL();
