@@ -25,7 +25,7 @@ namespace Alpha_Three.src.commands.PassengerCommands
             try
             {
                 List<Passenger> passengers = new List<Passenger>(bll.GetAllList());
-                passengers.ForEach(drive => stringBuilder.AppendLine(drive.ToString()));
+                passengers.ForEach(passenger => stringBuilder.AppendLine(passenger.ToString()));
 
                 Application.Print_message_line("Passengers: \n" + stringBuilder.ToString());
 

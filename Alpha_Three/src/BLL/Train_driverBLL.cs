@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Alpha_Three.src.BLL
 {
@@ -14,7 +15,16 @@ namespace Alpha_Three.src.BLL
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Train_driverDAL dal = new Train_driverDAL();
+                dal.Delete(id);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            return true;
         }
 
         public string ExportToJSON(DataTable dataTable)
@@ -64,17 +74,42 @@ namespace Alpha_Three.src.BLL
 
         public void ImportFromJSON(string path)
         {
-            throw new NotImplementedException();
+            try
+            {
+                PassengerDAL dal = new PassengerDAL();
+                dal.ImportFromJSON(path);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public bool Insert(Train_driver element)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Train_driverDAL dal = new Train_driverDAL();
+                dal.Insert(element);
+            }catch (Exception e)
+            {
+                throw;
+            }
+            return true;
         }
 
         public bool Update(Train_driver element)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Train_driverDAL dal = new Train_driverDAL();
+                dal.Update(element);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            return true;
         }
     }
 }

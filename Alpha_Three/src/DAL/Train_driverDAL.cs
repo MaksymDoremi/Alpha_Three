@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Alpha_Three.src.DAL
@@ -15,7 +16,29 @@ namespace Alpha_Three.src.DAL
     {
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "delete from Train_driver where ID = @id";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
 
         public string ExportToJSON(DataTable dataTable)
@@ -82,17 +105,80 @@ namespace Alpha_Three.src.DAL
 
         public void ImportFromJSON(string path)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string jsonString = "";
+                jsonString = File.ReadAllText(path);
+                List<Train_driver> train_drivers = JsonSerializer.Deserialize<List<Train_driver>>(jsonString);
+
+                foreach (Train_driver element in train_drivers)
+                {
+                    Insert(element);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public bool Insert(Train_driver element)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "insert into Train_driver(Name, Surname, Email) values(@name, @surname, @email)";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@name", element.Name);
+                    cmd.Parameters.AddWithValue("@surname", element.Surname);
+                    cmd.Parameters.AddWithValue("@email", element.Email);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
 
         public bool Update(Train_driver element)
         {
-            throw new NotImplementedException();
+            if (DatabaseConnection.GetConnection().State == ConnectionState.Closed)
+            {
+                DatabaseConnection.GetConnection().Open();
+            }
+
+            string query = "update Train_driver set Name = @name, Surname = @surname, Email = @email where ID = @id";
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand(query, DatabaseConnection.GetConnection()))
+                {
+                    cmd.Parameters.AddWithValue("@id", element.ID);
+                    cmd.Parameters.AddWithValue("@name", element.Name);
+                    cmd.Parameters.AddWithValue("@surname", element.Surname);
+                    cmd.Parameters.AddWithValue("@email", element.Email);
+
+                    cmd.ExecuteNonQuery();
+                }
+                DatabaseConnection.GetConnection().Close();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                DatabaseConnection.GetConnection().Close();
+                throw;
+            }
         }
     }
 }
