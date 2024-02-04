@@ -8,6 +8,10 @@ It was developed as school project to show our ability to design and implement c
 - School: Secondary Technical School of Electrical Engineering
 - Grade: C4b
 
+## Technology used
+- C# .NET
+- MSSQL
+
 ## Table of Contents
 - [Installation](#installation)
 - [Run](#run)
