@@ -17,6 +17,7 @@ It was developed as school project to show our ability to design and implement c
 - [Run](#run)
 - [Configuration](#configuration)
 - [Use Case](#use-case)
+- [Test Case](#test-case)
 - [Architecture](#architecture)
   - [User tier](#user-tier)
   - [Business tier](#business-tier)
@@ -91,6 +92,8 @@ Application
     - DriveReportCommand
     - TicketReportCommand
 
+## Test Case
+Test cases you can find at `Alpha_Three/tests/`
 
 ## Architecture
 Project is developed as three-tier application.
