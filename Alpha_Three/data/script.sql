@@ -132,6 +132,7 @@ go
 
 commit;
 
+begin transaction;
 insert into Train_driver(Name, Surname, Email) 
 values('Karel','Cerny', 'karel@cerny.cz'),
 ('Honza','Modry', 'honza@modry.cz');
@@ -145,4 +146,12 @@ values(1,2,100);
 insert into Train(Brand, Model, Capacity)
 values('Skoda', 'T42', 100), ('Mercedes', 'Benz12', 300);
 
-select * from Drive;
+insert into Drive(Train_driver_ID, Track_ID, Train_ID, Departure, Arrival)
+values(1,1,1,'2000-12-12 12:12:12', '2000-12-12 12:12:12');
+
+insert into Passenger(Name, Surname, Email)
+values('Karel', 'Passenger', 'email@gmail.com');
+
+insert into Ticket(Passenger_ID, Drive_ID, Travel_class_ID, Seat_number, Date_of_purchase, Price)
+values(1,1,1,123,'2000-12-12', 123);
+commit;

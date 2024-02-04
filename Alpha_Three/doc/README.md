@@ -8,14 +8,46 @@ It was developed as school project to show our ability to design and implement c
 - School: Secondary Technical School of Electrical Engineering
 - Grade: C4b
 
-
 ## Table of Contents
+- [Installation](#installation)
+- [Run](#run)
+- [Configuration](#configuration)
+- [Use Case](#use-case)
+- [Architecture](#architecture)
+  - [User tier](#user-tier)
+  - [Business tier](#business-tier)
+  - [Data tier](#data-tier)
+- [Activity](#activity)
+  - [Scenario #1 => example of CRUD commands](#scenario-1--example-of-crud-commands)
+  - [Scenario #2 => example of report commands](#scenario-2--example-of-report-commands)
+- [E-R diagram](#e-r-diagram)
+- [File structure](#file-structure)
+- [Errors](#errors)
+- [Resume](#resume)
 
-## Introduction
-
-## Features
 
 ## Installation
+```bash
+git clone https://github.com/MaksymDoremi/Alpha_Three.git
+```
+
+## Run 
+Before execution, do the following steps according to [Configuration](#configuration).  
+Run by the exact instructions!  
+Windows CMD
+```bash
+cd Alpha_Three/Alpha_Three/bin/Debug/net6.0/
+
+Alpha_Three.exe # execute exe file, or you can just click on it.
+```
+Git Bash
+```bash
+cd Alpha_Three/Alpha_Three/bin/Debug/net6.0/
+
+./Alpha_Three.exe # execute exe file, or you can just click on it.
+```
+
+
 
 ## Configuration
 1) Before running the program, firstly import database, script you can find at `Alpha_Three/data/export.sql`. Use MSSQL Server Management Studio to do so.
@@ -24,9 +56,9 @@ It was developed as school project to show our ability to design and implement c
 User has access to configure following variables at `Alpha_Three/App.config`
 - **skolniConnection** connectionString="Data Source=**PCXXX**;Initial Catalog=Alpha_Three;Persist Security Info=True;User ID=**admin_user**;Password=**123**"  
 Connection string to the database. Uses custom user, which is created with database export, **You have to change PCXXX to your PC**.
-- **logFilePath** value="../../../logs/log.txt"  
+- **logFilePath** value="../../../errorLogs/log.txt"  
 Path where erros are logged, you can change it if you want.
-Default is `Alpha_Three/logs/log.txt`.  
+Default is `Alpha_Three/errorLogs/log.txt`.  
 You can use relative path or absolute `C:/somewhere`
 - **ticketViewReportPath** value="../../../data/ticketReport.txt"  
 Path where you get ticket report, default is `Alpha_Three/data/ticketReport.txt`.  
@@ -250,6 +282,12 @@ Requires user to type 1-n to execute CRUD command, in case of bad command return
 </pre>
 
 ## Errors
+There might be wrong connection string or some issues, in that case application will try to connect 3 more times with interval 2 seconds, if still can't then it's shutdown.  
+You can find errors at `Alpha_Three/errorLogs/log.txt`
+
+Application handles DML errors, in case of error -> notify uses and log error, with those errors application may continue to run without issues.
 
 ## Resume
-
+This project was developed as school task in order to teach students how to work on bigger solutions.  
+That definitely gonna teach students to think in advance and try to design better and inteligent projects.  
+This project can be used as educational content in schools.  
