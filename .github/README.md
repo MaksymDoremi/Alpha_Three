@@ -125,7 +125,7 @@ Requires user to type 1-n to execute CRUD command, in case of bad command return
 
 
 ## E-R diagram
-![ER diagram](../data/ERdiagram.png "Diagram")
+![ER diagram](../Alpha_Three/data/ERdiagram.png "Diagram")
 
 ## File structure
 <pre>
