@@ -1,8 +1,6 @@
 use master
 
-
 drop database if exists Alpha_Three;
-drop login admin_user;
 
 go
 

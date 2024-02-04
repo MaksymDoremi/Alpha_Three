@@ -26,7 +26,7 @@ namespace Alpha_Three.src.db
                 {
                     if (_connection == null)
                     {
-                        _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["localConnection"].ConnectionString);
+                        _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["skolniConnection"].ConnectionString);
                     }
                 }
             }

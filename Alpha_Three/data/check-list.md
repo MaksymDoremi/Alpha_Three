@@ -37,7 +37,7 @@ Export databaze
 V prıpade, ze vas projekt potrebuje ke spustenı vlastnı relacnı databazi, je treba ji exportovat tak, aby splnovala pravidla
 nıze. Postup instalace/importu databaze doporucujeme popsat v souboru README.txt
 - ✅ Export databaze obsahuje DDL prıkazy pro vytvorenı databazoveho schematu/modelu.
-- ❌ Export databaze obsahuje DML prıkazy pro vlozenı testovacıch zaznamu/dat.
+- ✅ Export databaze obsahuje DML prıkazy pro vlozenı testovacıch zaznamu/dat.
 - ✅ Export databaze je uzavren v transakci.
-- ❌ Export databaze obsahuje komentar se jmenem projektu, autorem a jeho kontaktnımi udaji.
+- ✅ Export databaze obsahuje komentar se jmenem projektu, autorem a jeho kontaktnımi udaji.
 - ✅ Export databaze je ve formatu SQL v jednom textovem souboru s prıponou: .sql
