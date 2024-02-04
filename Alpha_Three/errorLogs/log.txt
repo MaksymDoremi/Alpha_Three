@@ -1,0 +1,175 @@
+ERROR [29.01.2024 21:34:32]: String '1' was not recognized as a valid DateTime.
+   at System.DateTime.Parse(String s)
+   at Alpha_Three.src.commands.DriveCommands.CreateDriveCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\DriveCommands\CreateDriveCommand.cs:line 51
+ERROR [29.01.2024 21:35:58]: Conversion failed when converting the nvarchar value 'aaa' to data type int.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Alpha_Three.src.DAL.DriveDAL.Insert(Drive element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\DAL\DriveDAL.cs:line 131
+   at Alpha_Three.src.BLL.DriveBLL.Insert(Drive element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\DriveBLL.cs:line 84
+   at Alpha_Three.src.commands.DriveCommands.CreateDriveCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\DriveCommands\CreateDriveCommand.cs:line 61
+ERROR [29.01.2024 22:02:15]: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Int32.Parse(String s)
+   at Alpha_Three.src.commands.DriveCommands.UpdateDriveCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\DriveCommands\UpdateDriveCommand.cs:line 42
+ERROR [30.01.2024 8:30:15]: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__Drive__Train_dri__33D4B598". The conflict occurred in database "Alpha_Three", table "dbo.Train_driver", column 'ID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Alpha_Three.src.DAL.DriveDAL.Insert(Drive element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\DAL\DriveDAL.cs:line 131
+   at Alpha_Three.src.BLL.DriveBLL.Insert(Drive element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\DriveBLL.cs:line 77
+   at Alpha_Three.src.commands.DriveCommands.CreateDriveCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\DriveCommands\CreateDriveCommand.cs:line 61
+ERROR [30.01.2024 8:31:39]: The INSERT statement conflicted with the FOREIGN KEY constraint "FK__Drive__Train_dri__33D4B598". The conflict occurred in database "Alpha_Three", table "dbo.Train_driver", column 'ID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Alpha_Three.src.DAL.DriveDAL.Insert(Drive element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\DAL\DriveDAL.cs:line 131
+   at Alpha_Three.src.BLL.DriveBLL.Insert(Drive element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\DriveBLL.cs:line 77
+   at Alpha_Three.src.commands.DriveCommands.CreateDriveCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\DriveCommands\CreateDriveCommand.cs:line 61
+ERROR [30.01.2024 11:27:11]: The method or operation is not implemented.
+   at Alpha_Three.src.BLL.PassengerBLL.Update(Passenger element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\PassengerBLL.cs:line 94
+   at Alpha_Three.src.commands.PassengerCommands.UpdatePassengerCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\PassengerCommands\UpdatePassengerCommand.cs:line 53
+ERROR [30.01.2024 20:56:58]: The method or operation is not implemented.
+   at Alpha_Three.src.BLL.PassengerBLL.ImportFromJSON(String path) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\PassengerBLL.cs:line 75
+   at Alpha_Three.src.commands.PassengerCommands.ImportJsonPassengerCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\PassengerCommands\ImportJsonPassengerCommand.cs:line 33
+ERROR [30.01.2024 22:14:25]: The UPDATE statement conflicted with the CHECK constraint "CK__Passenger__Email__24927208". The conflict occurred in database "Alpha_Three", table "dbo.Passenger", column 'Email'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Alpha_Three.src.DAL.PassengerDAL.Update(Passenger element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\DAL\PassengerDAL.cs:line 172
+   at Alpha_Three.src.BLL.PassengerBLL.Update(Passenger element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\PassengerBLL.cs:line 104
+   at Alpha_Three.src.commands.PassengerCommands.UpdatePassengerCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\PassengerCommands\UpdatePassengerCommand.cs:line 53
+ERROR [31.01.2024 21:42:44]: The parameterized query '(@name nvarchar(3),@address nvarchar(4000))insert into Station(N' expects the parameter '@address', which was not supplied.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Alpha_Three.src.DAL.StationDAL.Insert(Station element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\DAL\StationDAL.cs:line 147
+   at Alpha_Three.src.DAL.StationDAL.ImportFromJSON(String path) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\DAL\StationDAL.cs:line 123
+   at Alpha_Three.src.BLL.StationBLL.ImportFromJSON(String path) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\StationBLL.cs:line 78
+   at Alpha_Three.src.commands.StationCommands.ImportJsonStationCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\ImportJsonStationCommand.cs:line 29
+ERROR [31.01.2024 21:49:25]: The method or operation is not implemented.
+   at Alpha_Three.src.commands.StationCommands.CreateStationCommand.Execute() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\CreateStationCommand.cs:line 18
+   at Alpha_Three.src.commands.StationCommands.StationCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\StationCommand.cs:line 58
+ERROR [31.01.2024 21:49:30]: The method or operation is not implemented.
+   at Alpha_Three.src.commands.StationCommands.CreateStationCommand.Execute() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\CreateStationCommand.cs:line 18
+   at Alpha_Three.src.commands.StationCommands.StationCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\StationCommand.cs:line 58
+ERROR [31.01.2024 21:49:31]: The method or operation is not implemented.
+   at Alpha_Three.src.commands.StationCommands.CreateStationCommand.Execute() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\CreateStationCommand.cs:line 18
+   at Alpha_Three.src.commands.StationCommands.StationCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\StationCommand.cs:line 58
+ERROR [31.01.2024 21:49:31]: The method or operation is not implemented.
+   at Alpha_Three.src.commands.StationCommands.CreateStationCommand.Execute() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\CreateStationCommand.cs:line 18
+   at Alpha_Three.src.commands.StationCommands.StationCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\StationCommand.cs:line 58
+ERROR [31.01.2024 21:49:32]: The method or operation is not implemented.
+   at Alpha_Three.src.commands.StationCommands.CreateStationCommand.Execute() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\CreateStationCommand.cs:line 18
+   at Alpha_Three.src.commands.StationCommands.StationCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\StationCommand.cs:line 58
+ERROR [31.01.2024 21:50:57]: The method or operation is not implemented.
+   at Alpha_Three.src.BLL.StationBLL.Update(Station element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\StationBLL.cs:line 102
+   at Alpha_Three.src.commands.StationCommands.UpdateStationCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\StationCommands\UpdateStationCommand.cs:line 44
+ERROR [01.02.2024 11:17:23]: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Int32.Parse(String s)
+   at Alpha_Three.src.commands.DriveCommands.CreateDriveCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\DriveCommands\CreateDriveCommand.cs:line 36
+ERROR [02.02.2024 20:01:55]: The method or operation is not implemented.
+   at Alpha_Three.src.BLL.Travel_classBLL.GetAllList() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\Travel_classBLL.cs:line 46
+   at Alpha_Three.src.commands.TicketCommands.CreateTicketCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TicketCommands\CreateTicketCommand.cs:line 32
+ERROR [02.02.2024 20:56:18]: Must declare the scalar variable "@passenge_ID".
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Alpha_Three.src.DAL.TicketDAL.Insert(Ticket element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\DAL\TicketDAL.cs:line 80
+   at Alpha_Three.src.BLL.TicketBLL.Insert(Ticket element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\TicketBLL.cs:line 65
+   at Alpha_Three.src.commands.TicketCommands.CreateTicketCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TicketCommands\CreateTicketCommand.cs:line 84
+ERROR [02.02.2024 20:57:10]: The method or operation is not implemented.
+   at Alpha_Three.src.commands.TicketCommands.RetrieveTicketCommand.Execute() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TicketCommands\RetrieveTicketCommand.cs:line 14
+   at Alpha_Three.src.commands.TicketCommands.TicketCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TicketCommands\TicketCommand.cs:line 57
+ERROR [02.02.2024 22:21:52]: The method or operation is not implemented.
+   at Alpha_Three.src.BLL.TicketBLL.Delete(Int32 id) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\TicketBLL.cs:line 17
+   at Alpha_Three.src.commands.TicketCommands.DeleteTicketCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TicketCommands\DeleteTicketCommand.cs:line 35
+ERROR [02.02.2024 23:30:36]: The method or operation is not implemented.
+   at Alpha_Three.src.commands.TrackCommands.RetrieveTrackCommand.Execute() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TrackCommands\RetrieveTrackCommand.cs:line 14
+   at Alpha_Three.src.commands.TrackCommands.TrackCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TrackCommands\TrackCommand.cs:line 57
+ERROR [03.02.2024 0:18:09]: Track length must be greater than 0. (Parameter 'value')
+   at Alpha_Three.src.Objects.Track.set_TrackLengthKm(Int32 value) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\Objects\Track.cs:line 50
+   at Alpha_Three.src.Objects.Track..ctor(Int32 id, Int32 stationOriginID, Int32 stationDestinationID, Int32 trackLengthKm) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\Objects\Track.cs:line 22
+   at Alpha_Three.src.commands.TrackCommands.UpdateTrackCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TrackCommands\UpdateTrackCommand.cs:line 66
+ERROR [03.02.2024 0:22:23]: The DELETE statement conflicted with the REFERENCE constraint "FK__Drive__Track_ID__34C8D9D1". The conflict occurred in database "Alpha_Three", table "dbo.Drive", column 'Track_ID'.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Alpha_Three.src.DAL.TrackDAL.Delete(Int32 id) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\DAL\TrackDAL.cs:line 30
+   at Alpha_Three.src.BLL.TrackBLL.Delete(Int32 id) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\TrackBLL.cs:line 20
+   at Alpha_Three.src.commands.TrackCommands.DeleteTrackCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TrackCommands\DeleteTrackCommand.cs:line 35
+ERROR [03.02.2024 17:45:01]: Incorrect syntax near 'Name'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Alpha_Three.src.DAL.Train_driverDAL.Update(Train_driver element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\DAL\Train_driverDAL.cs:line 156
+   at Alpha_Three.src.BLL.Train_driverBLL.Update(Train_driver element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\Train_driverBLL.cs:line 98
+   at Alpha_Three.src.commands.Train_driverCommands.UpdateTrain_driverCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\Train_driverCommands\UpdateTrain_driverCommand.cs:line 52
+ERROR [03.02.2024 21:54:46]: Must declare the scalar variable "@brand".
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Alpha_Three.src.DAL.TrainDAL.Insert(Train element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\DAL\TrainDAL.cs:line 105
+   at Alpha_Three.src.BLL.TrainBLL.Insert(Train element) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\BLL\TrainBLL.cs:line 74
+   at Alpha_Three.src.commands.TrainCommands.CreateTrainCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TrainCommands\CreateTrainCommand.cs:line 37
+ERROR [03.02.2024 21:55:29]: The method or operation is not implemented.
+   at Alpha_Three.src.commands.TrainCommands.UpdateTrainCommand.Execute() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TrainCommands\UpdateTrainCommand.cs:line 14
+   at Alpha_Three.src.commands.TrainCommands.TrainCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TrainCommands\TrainCommand.cs:line 58
+ERROR [03.02.2024 22:07:32]: The method or operation is not implemented.
+   at Alpha_Three.src.commands.TrainCommands.ImportJsonTrainCommand.Execute() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TrainCommands\ImportJsonTrainCommand.cs:line 14
+   at Alpha_Three.src.commands.TrainCommands.TrainCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\TrainCommands\TrainCommand.cs:line 58
+ERROR [03.02.2024 23:58:37]: Could not find a part of the path 'C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\date\driveReport.txt'.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategy(FileStream fileStream, String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, Int64 preallocationSize)
+   at System.IO.StreamWriter.ValidateArgsAndOpenPath(String path, Boolean append, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.WriteAllText(String path, String contents)
+   at Alpha_Three.src.commands.ReportCommands.DriveReportCommand.Report(String path) in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\ReportCommands\DriveReportCommand.cs:line 74
+   at Alpha_Three.src.commands.ReportCommands.DriveReportCommand.Execute() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\ReportCommands\DriveReportCommand.cs:line 23
+ERROR [04.02.2024 0:45:31]: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.Int32.Parse(String s)
+   at Alpha_Three.src.commands.DriveCommands.CreateDriveCommand.Run() in C:\Users\kinto\C#Dev\Alpha_Three\Alpha_Three\src\commands\DriveCommands\CreateDriveCommand.cs:line 51
